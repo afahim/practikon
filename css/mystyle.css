@@ -8,9 +8,26 @@
 
 body {
   background: rgb(43, 12, 2);
-  color: white;
 }
 
-h1, h2, h3, h4 {
-  color: white;
+
+/**
+ * Configuring Editable Area Responsively.
+ */
+
+#editable {
+ background: url(../img/pad_background.png) repeat;
+ font: normal 14px verdana;
+ line-height: 25px;
+ /*margin-top: 3%;
+ margin-left:auto;
+ margin-right:auto;
+ padding-left: 108px;
+ padding-bottom: 40%;
+ width: 65%;
+ max-width: 850px;
+ margin-bottom: 3%;
+ margin-left: auto;
+ border: solid 1px #ddd;
+ */
 }
