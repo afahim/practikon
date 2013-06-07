@@ -2,12 +2,12 @@ $(document).ready(function(){
 
 	var selectedSegment = null;
 
-	$(document).click(function(){
+	$(document).click(function(event){
 		var thisClass = $(event.target).attr('class');
 		var thisID = $(event.target).attr('id');
 		
 		//This Code is called when "selectable" segment is clicked on the activity.
-		//It clears up the currently existent content. In case the 
+		//It clears up the currently existent content.
 		if (thisClass === "segment")
 		{
 			document.getElementById("scope-modal").innerHTML = "";

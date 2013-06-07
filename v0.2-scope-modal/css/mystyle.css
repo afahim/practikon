@@ -25,19 +25,6 @@
 }
 
 /**
- * Making sure bottom edit bar stays fixed regardless of scrolling.
- */
-.choices {
-  min-width: 700px;
-  margin: 20px;
-  display: block;
-}
-
-.choice {
-  line-height: 200%;
-}
-
-/**
  * Spacing between successive lines to make it easier to select lines.
  */
 .segment {
@@ -55,10 +42,23 @@
   max-width: 100%;
   height: 30%;
   display: none;
-  padding: 1%;
-  overflow: scroll;
+  padding: 0.5%;
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 
+/**
+ * Making sure scope modal stays fixed regardless of horizontal overflow.
+ */
+.choices {
+  min-width: 1000px;
+  margin: 20px;
+  display: block;
+}
+
+.choice {
+  line-height: 175%;
+}
 /*
  * Hiding segment replacements
  */
@@ -75,6 +75,7 @@ ol
 /*
  * CSS for making the whole document clickable - to ensure scope dismissal works on iOS devices.
  * ToDo: Create a media query to have it enabled only for iOS devices.
+ * ToDo: Check if we still need this for now. Perhaps we don't
  */
 * 
 {
