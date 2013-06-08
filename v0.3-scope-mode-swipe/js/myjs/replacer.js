@@ -19,7 +19,6 @@ $(document).ready(function(){
 				$(".choices").append($(this).clone());
 			});
 			selectedSegment = $(event.target);
-
 			window.mySwipe = Swipe(document.getElementById('slider'));
 		}
 
