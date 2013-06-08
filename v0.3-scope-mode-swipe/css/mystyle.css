@@ -21,7 +21,7 @@
  */
  #editable {
    margin-top: 3%;
-   padding-bottom: 20%;
+   padding-bottom: 20% !important;
    cursor: default;
 }
 
@@ -51,17 +51,36 @@
   top: 5%;
   right: 0.5%;
   font-size: 1em;
+  z-index:10
+}
+
+.scope-nav {
+  display: none;
+  position: absolute;
+  color: grey;
+  top: 50%;
+  font-size: 1em;
+  z-index:10
+}
+
+#scope-left {
+  left: 0.5%;
+}
+
+#scope-right {
+  right: 0.5%;
 }
 
 /**
  * Making sure scope modal stays fixed regardless of horizontal overflow.
  */
 .choices {
-  margin: 20px;
   display: block;
 }
 
 .choice {
+  padding-left: 1.4em;
+  padding-right: 1.4em;
   line-height: 175%;
 }
 /*
