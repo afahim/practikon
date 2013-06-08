@@ -13,11 +13,14 @@ $(document).ready(function(){
 			$(".choices").remove();
 			var optionsID = $(event.target).next().attr('id');
 			$('#scope-modal').slideDown(600);
-			$("#scope-modal").append("<ol class=\"choices\"></ol>");
+			$("#scope-modal").append("<div id=\"slider\" class=\"swipe\"></div>");
+			$("#slider").append("<ol class=\"swipe-wrap choices\"></ol>");
 			$("#" + optionsID + " div").each(function(){
 				$(".choices").append($(this).clone());
 			});
 			selectedSegment = $(event.target);
+
+			window.mySwipe = Swipe(document.getElementById('slider'));
 		}
 
 		//Replacing existing text with the choice that was clicked.
@@ -27,16 +30,20 @@ $(document).ready(function(){
 			var originalText = selectedSegment.text();
 			var selectedChoice = $(event.target).text();
 
+			$(".segment").css("color", "grey");
+			selectedSegment.css("color", "white");
 			selectedSegment.fadeOut("slow", function(){
 				$(this).text(selectedChoice).hide();
-				$(this).fadeIn("slow");
+				$(this).css("color", "white");
+				$(this).fadeIn(2500, function(){
+					$(".segment").css("color", "white");
+				});
 			});
 
 			$(event.target).fadeOut("slow", function(){
 				$(this).text(originalText).hide();
 				$(this).fadeIn("slow");
 			});
-
 		}
 
 		//Not dismissing scope mode if clicked on by the user
