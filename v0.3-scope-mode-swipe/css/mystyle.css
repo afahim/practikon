@@ -30,8 +30,23 @@
  */
 .segment {
   line-height:200%;
+  padding: 5px;
+  margin-right: 2px;
+  display: inline;
+  background: rgba(127, 70, 40, .4);
+  border-radius: 5px;
+}
+
+/*
+ * CSS for indicating non actionable text
+ */
+.non-actionable {
+  line-height:200%;
+  padding: 5px;
+  margin-right: 2px;
   display: inline;
 }
+
 
  #scope-modal {
   background: white;
@@ -91,8 +106,7 @@
 }
 
 /*Hiding bullet icons from lists*/
-ol
-{
+ol {
     list-style-type: none;
 }
 
@@ -101,8 +115,7 @@ ol
  * ToDo: Create a media query to have it enabled only for iOS devices.
  * ToDo: Check if we still need this for now. Perhaps we don't
  */
-* 
-{
+* {
    cursor: pointer !important;
 }
 

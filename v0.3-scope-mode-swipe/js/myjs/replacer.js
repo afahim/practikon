@@ -1,9 +1,5 @@
 $(document).ready(function(){
 
-	$("#activity-name").click(function(event){
-			
-	});
-
 	var selectedSegment = null;
 
 	$(document).click(function(event){
