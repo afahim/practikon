@@ -40,19 +40,25 @@ $(document).ready(function(){
 
 		//Replacing existing text with the choice that was clicked.
 		//Making existing text one of the available choices for the segment
+		//ToDo: We can get rid of jQuery UI and just rely on opacity to fade in out stuff without
+		//having to change color to grey
 		else if (thisClass.indexOf("choice") !== -1)
 		{
 			var originalText = selectedSegment.text();
 			var selectedChoice = $(event.target).text();
 
 			$(".segment, .non-actionable").css("color", "grey");
+			$(".segment, .non-actionable").css("opacity", "0.3");
 			selectedSegment.css("color", "white");
+			selectedSegment.css("opacity", "1");
 			selectedSegment.fadeOut(200, function(){
 				$(this).text(selectedChoice).hide();
 				$(this).css("color", "white");
+				$(this).css("opacity", "1");
 				$(this).show(0, function(){
 					$( ".segment, .non-actionable" ).animate({
 						color: "#FFFFFF",
+						opacity: "1",
 					}, 3000 );
 				});
 			});

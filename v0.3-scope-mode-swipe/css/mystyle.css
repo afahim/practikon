@@ -116,6 +116,7 @@ ol {
  * ToDo: Check if we still need this for now. Perhaps we don't
  */
 * {
+   -webkit-tap-highlight-color: rgba(0, 0, 0, 0); 
    cursor: pointer !important;
 }
 
