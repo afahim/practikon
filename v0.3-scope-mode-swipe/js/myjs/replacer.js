@@ -23,16 +23,16 @@ $(document).ready(function(){
 			$(".choices").each(function(){
 				$("#" + optionsID).append($(this).html());
 			});
+			$(".scope-nav").hide();
 			$('#scope-modal').slideUp(600);
 			selectedSegment = null;
-			$(".scope-nav").hide(500);
 		}
 		else if (thisClass === "segment")
 		{
 			$(".choices").remove();
 			var optionsID = $(event.target).next().attr('id');
 			$('#scope-modal').slideDown(600);
-			$(".scope-nav").fadeIn(500);
+			$(".scope-nav").show();
 			$("#scope-modal").append("<div id=\"slider\" class=\"swipe no-slide\"></div>");
 			$("#slider").append("<ol class=\"swipe-wrap choices no-slide\"></ol>");
 			$("#" + optionsID + " div").each(function(){
@@ -83,9 +83,9 @@ $(document).ready(function(){
 			$(".choices").each(function(){
 				$("#" + optionsID).append($(this).html());
 			});
+			$(".scope-nav").hide();
 			$('#scope-modal').slideUp(600);
 			selectedSegment = null;
-			$(".scope-nav").hide(500);
 		}
 	});
 
