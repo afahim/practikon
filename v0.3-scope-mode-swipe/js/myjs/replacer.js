@@ -45,13 +45,13 @@ $(document).ready(function(){
 			var originalText = selectedSegment.text();
 			var selectedChoice = $(event.target).text();
 
-			$(".segment").css("color", "grey");
+			$(".segment, .non-actionable").css("color", "grey");
 			selectedSegment.css("color", "white");
 			selectedSegment.fadeOut(200, function(){
 				$(this).text(selectedChoice).hide();
 				$(this).css("color", "white");
 				$(this).show(0, function(){
-					$( ".segment" ).animate({
+					$( ".segment, .non-actionable" ).animate({
 						color: "#FFFFFF",
 					}, 3000 );
 				});
