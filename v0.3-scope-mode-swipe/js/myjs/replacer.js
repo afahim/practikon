@@ -51,7 +51,7 @@ $(document).ready(function(){
 
 			$(".segment").css("color", "grey");
 			selectedSegment.css("color", "white");
-			selectedSegment.fadeOut(600, function(){
+			selectedSegment.fadeOut(200, function(){
 				$(this).text(selectedChoice).hide();
 				$(this).css("color", "white");
 				$(this).show(0, function(){
