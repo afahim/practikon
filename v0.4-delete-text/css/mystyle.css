@@ -41,11 +41,19 @@
  */
 .segment {
   line-height:200%;
-  padding: 5px;
-  margin-right: 2px;
+  padding-right: 5px;
+  padding-left: 5px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  margin-right: 0.6em;
   display: inline;
   background: rgba(127, 70, 40, .4);
   border-radius: 5px;
+  position: relative;
+}
+
+.segment > i {
+  display: none;
 }
 
 /*
@@ -54,6 +62,16 @@
 .selected {
   background: rgba(250, 230, 104, 0.6);
 }
+
+.selected > i {
+  font-size: 0.9em;
+  top: 0.1em;
+  margin-right: 2px;
+  margin-left: 3px;
+  position: relative;
+  display: inline;
+}
+
 
 
 /*
@@ -119,7 +137,13 @@
   padding-left: 1.4em;
   padding-right: 1.4em;
   line-height: 175%;
+  text-align:center;
 }
+
+.choice > i {
+  display: none;
+}
+
 
 /*
  * Hiding segment replacements

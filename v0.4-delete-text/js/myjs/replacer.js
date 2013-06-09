@@ -21,7 +21,6 @@ $(document).ready(function(){
 			selectedSegment.removeClass("selected");
 			selectedSegment = null;
 		}
-
 		//This Code is called when "selectable" segment is clicked on the activity.
 		//It clears up the currently existent content.
 		//ToDo: Remove duplicate code
@@ -46,17 +45,19 @@ $(document).ready(function(){
 		//Making existing text one of the available choices for the segment
 		//ToDo: We can get rid of jQuery UI and just rely on opacity to fade in out stuff without
 		//having to change color to grey
+		//ToDo: Instead of having a "..." in every segment div, just make one generic one and always keep
+		//it in scope mode.
 		else if (thisClass.indexOf("choice") !== -1)
 		{
-			var originalText = selectedSegment.text();
-			var selectedChoice = $(event.target).text();
+			var originalText = selectedSegment.html();
+			var selectedChoice = $(event.target).html();
 
 			$(".segment, .non-actionable").css("color", "grey");
 			$(".segment, .non-actionable").css("opacity", "0.3");
 			selectedSegment.css("color", "white");
 			selectedSegment.css("opacity", "1");
 			selectedSegment.fadeOut(200, function(){
-				$(this).text(selectedChoice).hide();
+				$(this).html(selectedChoice).hide();
 				$(this).css("color", "white");
 				$(this).css("opacity", "1");
 				$(this).show(0, function(){
@@ -67,14 +68,14 @@ $(document).ready(function(){
 				});
 			});
 			$(event.target).fadeOut("slow", function(){
-				$(this).text(originalText).hide();
+				$(this).html(originalText).hide();
 				$(this).fadeIn("slow");
 			});
 		}
 
 		//Not dismissing scope mode if clicked on by the user
 		// ToDo: Change global clicks to onClicks to avoid overhead of going through this list sequentially
-		else if (thisClass.indexOf("no-slide") !== -1)
+		else if (thisClass.indexOf("no-slide") !== -1 || thisClass.indexOf("segment-delete") !== -1)
 		{
 
 		}
@@ -103,4 +104,10 @@ function swipeLeft(){
 
 function swipeRight(){
 	window.mySwipe.next();
+}
+
+function deleteSegment(event){
+	var originalText = $( ".selected" ).html();
+	$(".selected").html("...")
+	$(".swipe-wrap > .empty-char").html(originalText);
 }
