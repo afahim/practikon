@@ -66,7 +66,6 @@ $(document).ready(function(){
 					}, 3000 );
 				});
 			});
-
 			$(event.target).fadeOut("slow", function(){
 				$(this).text(originalText).hide();
 				$(this).fadeIn("slow");
