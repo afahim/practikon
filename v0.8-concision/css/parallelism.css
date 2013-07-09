@@ -1,0 +1,190 @@
+/* ==========================================================================
+  Foundation CSS Overrides for Parallelism Activities
+  ========================================================================== */
+
+/*
+ * Segments that don't have a problem darken
+ */
+.selected-non-problematic {
+  /*background-color: rgba(250, 230, 104, 0.6);*/
+  animation:animation-darken 1.4s;
+ -webkit-animation:animation-darken 1.4s; /* Safari and Chrome */
+}
+
+@keyframes animation-darken
+{
+  0%{color: rgba(0, 0, 0, 0.65);}
+  50%{color: rgba(0, 0, 0, 1);}
+  100%{color: rgba(0, 0, 0, 0.65);}
+}
+
+@-webkit-keyframes animation-darken /* Safari and Chrome */
+{
+  0%{color: rgba(0, 0, 0, 0.65);}
+  50%{color: rgba(0, 0, 0, 1);}
+  100%{color: rgba(0, 0, 0, 0.65);}
+}
+
+.problematic {
+  -webkit-transition: bottom 0.7s, top 0.7s;
+  -moz-transition: bottom 0.7s, top 0.7s;
+  -o-transition: bottom 0.7s, top 0.7s;
+  transition: bottom 0.7s, top 0.7s;
+}
+
+
+/*
+ * Segments that DO have a problem, move UP
+ */
+
+.problematic-up-good {
+  background-color: rgba(0,0,0, 0.1);
+  bottom: 0px;
+  -webkit-transition: bottom 0.7s, top 0.7s;
+  -moz-transition: bottom 0.7s, top 0.7s;
+  -o-transition: bottom 0.7s, top 0.7s;
+  transition: bottom 0.7s, top 0.7s;
+}
+
+.problematic-up-poor {
+  background-color: rgba(0,0,0, 0.1);
+  bottom: 10px;
+  -webkit-transition: bottom 0.7s, top 0.7s;
+  -moz-transition: bottom 0.7s, top 0.7s;
+  -o-transition: bottom 0.7s, top 0.7s;
+  transition: bottom 0.7s, top 0.7s;
+}
+
+.problematic-up-okay {
+  background-color: rgba(0,0,0, 0.1);
+  bottom: 5px;
+  -webkit-transition: bottom 0.7s, top 0.7s;
+  -moz-transition: bottom 0.7s, top 0.7s;
+  -o-transition: bottom 0.7s, top 0.7s;
+  transition: bottom 0.7s, top 0.7s;
+}
+
+/*
+ * Segments that DO have a problem, and move DOWN
+ */
+
+.problematic-down-good {
+  background-color: rgba(0,0,0, 0.1);
+  top: 0px;
+  -webkit-transition: bottom 0.7s, top 0.7s;
+  -moz-transition: bottom 0.7s, top 0.7s;
+  -o-transition: bottom 0.7s, top 0.7s;
+  transition: bottom 0.7s, top 0.7s;
+}
+
+.problematic-down-poor {
+  background-color: rgba(0,0,0, 0.1);
+  top: 10px;
+  -webkit-transition: bottom 0.7s, top 0.7s;
+  -moz-transition: bottom 0.7s, top 0.7s;
+  -o-transition: bottom 0.7s, top 0.7s;
+  transition: bottom 0.7s, top 0.7s;
+}
+
+.problematic-down-okay {
+  background-color: rgba(0,0,0, 0.1);
+  top: 5px;
+  -webkit-transition: bottom 0.7s, top 0.7s;
+  -moz-transition: bottom 0.7s, top 0.7s;
+  -o-transition: bottom 0.7s, top 0.7s;
+  transition: bottom 0.7s, top 0.7s;
+}
+
+/*
+ * Segments that DO have a problem, and show animation based on how the answer is rated
+ */
+
+.selected.good-option {
+  animation:animation-good 0.6s;
+  -webkit-animation:animation-good 0.6s; /* Safari and Chrome */
+}
+
+.selected.okay-option {
+  animation:animation-okay 0.6s;
+  -webkit-animation:animation-okay 0.6s; /* Safari and Chrome */
+}
+
+.selected.poor-option {
+  animation:animation-poor 0.6s;
+  -webkit-animation:animation-poor 0.6s; /* Safari and Chrome */
+}
+
+
+@keyframes animation-good
+{
+  0%{color: rgba(0, 0, 0, 0.8);}
+  35%{color: rgba(51, 204, 153, 1);}
+  65%{color: rgba(51, 204, 153, 1);}
+  100%{color: rgba(0, 0, 0, 0.8);}
+}
+
+@-webkit-keyframes animation-good /* Safari and Chrome */
+{
+  0%{color: rgba(0, 0, 0, 0.8);}
+  25%{color: rgba(51, 204, 153, 1);}
+  75%{color: rgba(51, 204, 153, 1);}
+  100%{color: rgba(0, 0, 0, 0.8);}
+}
+
+
+@keyframes animation-okay
+{
+  0%{color: rgba(0, 0, 0, 0.8);}
+  35%{color: rgba(255, 153, 0, 1);}
+  65%{color: rgba(255, 153, 0, 1);}
+  100%{color: rgba(0, 0, 0, 0.8);}
+}
+
+@-webkit-keyframes animation-okay /* Safari and Chrome */
+{
+  0%{color: rgba(0, 0, 0, 0.8);}
+  25%{color: rgba(255, 153, 0, 1);}
+  75%{color: rgba(255, 153, 0, 1);}
+  100%{color: rgba(0, 0, 0, 0.8);}
+}
+
+@keyframes animation-poor
+{
+  0%{color: rgba(0, 0, 0, 0.8);}
+  35%{color: rgba(255, 51, 0, 1);}
+  65%{color: rgba(255, 51, 0, 1);}
+  100%{color: rgba(0, 0, 0, 0.8);}
+}
+
+@-webkit-keyframes animation-poor /* Safari and Chrome */
+{
+  0%{color: rgba(0, 0, 0, 0.8);}
+  25%{color: rgba(255, 51, 0, 1);}
+  75%{color: rgba(255, 51, 0, 1);}
+  100%{color: rgba(0, 0, 0, 0.8);}
+}
+
+
+.selected-problematic-up > i {
+  display: inline;
+  font-size: 0.95em;
+  padding: 10px !important;
+  top: 0.1em;
+  right: 5px;
+  margin-right: 2px;
+  margin-left: 3px;
+  position: relative;
+  width: px !important;
+}
+
+.selected-problematic-down > i {
+  display: inline;
+  font-size: 0.95em;
+  padding: 10px !important;
+  top: 0.1em;
+  right: 5px;
+  margin-right: 2px;
+  margin-left: 3px;
+  position: relative;
+  width: px !important;
+}
