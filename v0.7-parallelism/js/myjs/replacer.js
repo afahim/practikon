@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
 	var selectedSegment = null;
+	var textDirection = null;
 
 	$(document).click(function(event){
 		var thisClass = $(event.target).attr('class');
@@ -10,9 +11,14 @@ $(document).ready(function(){
 		
 		if (thisClass == undefined)
 		{
-			$(".selected > .segment-delete").fadeOut(20);
+			var newClassList = removeClassWith("selected-problematic", 
+				selectedSegment.get(0).className);
+
+			selectedSegment.get(0).className = newClassList;
+
+			//$(".selected > .segment-delete").fadeOut(20);
 			var optionsID = selectedSegment.next().attr('id');
-			//document.getElementById(optionsID).innerHTML = "";
+			document.getElementById(optionsID).innerHTML = "";
 			$("#" + optionsID).append("<ol class=\"option\"></ol>");
 			$(".choices").each(function(){
 				$("#" + optionsID).append($(this).html());
@@ -20,20 +26,56 @@ $(document).ready(function(){
 			$(".scope-nav").hide();
 			$('#scope-modal').slideUp(600);
 			selectedSegment.removeClass("selected");
+			selectedSegment.removeClass("selected-non-problematic");
 			selectedSegment = null;
 		}
+
+		else if (thisClass.indexOf("non-problematic") !== -1)
+		{
+			selectedSegment = $(event.target);
+			selectedSegment.addClass("selected-non-problematic");
+			var segmentToUnselect = selectedSegment;
+			selectedSegment = null;
+			setTimeout(function(){
+				segmentToUnselect.removeClass("selected-non-problematic");
+			},700);
+			
+		}
+
 		//This Code is called when "selectable" segment is clicked on the activity.
 		//It clears up the currently existent content.
 		//ToDo: Remove duplicate code
-		else if (thisClass === "segment")
+		else if (thisClass.indexOf("problematic") !== -1 && thisClass.indexOf("selected-problematic") === -1)
 		{
+			//textDirection randomly decides if problematic text moves up or down. 1 is up, 0 is down
+			textDirection = Math.round(Math.random());
+
 			$(".choices").remove();
 			var optionsID = $(event.target).next().attr('id');
 			selectedSegment = $(event.target);
-			$(".segment").removeClass("selected");
-			selectedSegment.addClass("selected");
-			$(".selected > .segment-delete").fadeOut(0);
-			$(".selected > .segment-delete").fadeIn(600, function(){
+			var segmentClass = "";
+
+			if (textDirection == 0) {
+				segmentClass = "selected-problematic-up";
+			}
+			else {
+				segmentClass = "selected-problematic-down";
+			}
+
+			if (thisClass.indexOf("good") !== -1) {
+				segmentClass = segmentClass + "-good"
+			} 
+			else if (thisClass.indexOf("okay") !== -1) {
+				segmentClass = segmentClass + "-okay"
+			}
+			else if (thisClass.indexOf("poor") !== -1) {
+				segmentClass = segmentClass + "-poor"
+			}
+
+			selectedSegment.addClass(segmentClass);
+
+			$("." + segmentClass + " > .segment-delete").fadeOut(0);
+			$("." + segmentClass + " > .segment-delete").fadeIn(0, function(){
 				$('#scope-modal').slideDown(600);
 				$(".scope-nav").show();
 				$("#scope-modal").append("<div id=\"slider\" class=\"swipe no-slide\"></div>");
@@ -56,26 +98,64 @@ $(document).ready(function(){
 		{
 			var originalText = selectedSegment.html();
 			var selectedChoice = $(event.target).html();
+			var classToAdd = "";
 
-			$(".segment, .non-actionable").css("opacity", "0.5");
-			selectedSegment.css("opacity", "1");
-			selectedSegment.fadeOut(200, function(){
-				$(this).html(selectedChoice).hide();
-				$(this).css("opacity", "1");
-				$(this).show(0, function(){
-					$( ".segment, .non-actionable" ).animate({
-						color: "#FFFFFF",
-						opacity: "1",
-					}, 3000 );
-				});
-			});
+			if (textDirection == 0) //text is displaced up
+			{
+				classToAdd = "selected-problematic-up";
+			} else { //text is displaced down
+				classToAdd = "selected-problematic-down";
+			}
+
+			if (thisClass.indexOf("good") !== -1) {
+				classToAdd = replaceClassWith(
+					"selected-problematic",
+					selectedSegment.get(0).className,
+					classToAdd + "-good"
+					);
+			} 
+			else if (thisClass.indexOf("okay") !== -1) {
+				classToAdd = replaceClassWith(
+					"selected-problematic",
+					selectedSegment.get(0).className,
+					classToAdd + "-okay"
+					);
+			}
+			else if (thisClass.indexOf("poor") !== -1) {
+				classToAdd = replaceClassWith(
+					"selected-problematic",
+					selectedSegment.get(0).className,
+					classToAdd + "-poor"
+					);
+			}
+
+			var actualOptionType = getClassWith("-option", 
+				selectedSegment.get(0).className);
+
+			var choiceOptionType = getClassWith("-option", 
+				$(event.target).get(0).className);
+
 			$(event.target).fadeOut("slow", function(){
 				$(this).html(originalText).hide();
 				$(this).fadeIn("slow");
+
+				selectedSegment.html(selectedChoice).hide();
+				selectedSegment.css("opacity", "1");
+				selectedSegment.show();
+
+				$(event.target).get(0).className = removeClassWith(
+					"-option",
+					$(event.target).get(0).className) + actualOptionType;
+
+				selectedSegment.get(0).className = removeClassWith(
+					"-option",
+					classToAdd) + choiceOptionType;
 			});
+
+
 		}
 
-		//Not dismissing scope mode if clicked on by the user
+		// Not dismissing scope mode if clicked on by the user
 		// ToDo: Change global clicks to onClicks to avoid overhead of going through this list sequentially
 		else if (thisClass.indexOf("no-slide") !== -1 || thisClass.indexOf("segment-delete") !== -1)
 		{
@@ -85,9 +165,14 @@ $(document).ready(function(){
 		//Dismissing scope modal - in case user clicks anywhere but selectable text
 		else
 		{	
-			$(".selected > .segment-delete").fadeOut(20);
+			var newClassList = removeClassWith("selected-problematic", 
+				selectedSegment.get(0).className);
+
+			selectedSegment.get(0).className = newClassList;
+
+			//$(".selected > .segment-delete").fadeOut(20);
 			var optionsID = selectedSegment.next().attr('id');
-			//document.getElementById(optionsID).innerHTML = "";
+			document.getElementById(optionsID).innerHTML = "";
 			$("#" + optionsID).append("<ol class=\"option\"></ol>");
 			$(".choices").each(function(){
 				$("#" + optionsID).append($(this).html());
@@ -95,12 +180,60 @@ $(document).ready(function(){
 			$(".scope-nav").hide();
 			$('#scope-modal').slideUp(600);
 			selectedSegment.removeClass("selected");
+			selectedSegment.removeClass("selected-non-problematic");
 			selectedSegment = null;
 		}
 	});
 
 });
 
+//This function takes in a string and a className which can contain multiple classes
+//It returns the class which contains all or part of the string
+function getClassWith(string, className){
+	var classList = className.split(/\s+/);
+	for (var i = 0; i < classList.length; i++) 
+	{
+		if (classList[i].indexOf(string) !== -1)
+		{
+			return classList[i];
+		}
+	}
+
+	return undefined;
+}
+
+//This function takes in a string and a className which can contain multiple classes
+//It removes the class(es) which match the string
+//It returns a modified class list as a string
+function removeClassWith(string, className){
+	var classList = className.split(/\s+/);
+	var newClassList = "";
+	for (var i = 0; i < classList.length; i++) 
+	{
+		if (classList[i].indexOf(string) === -1)
+		{
+			newClassList = newClassList + classList[i] + " ";
+		}
+	}
+	return newClassList;
+}
+
+//This function takes in a string, a className which can contain multiple classes, and another string
+//It removes the class(es) which match the string
+//It adds the newString as a class to the className
+//It returns a modified class list as a string
+function replaceClassWith(string, className, newString){
+	var classList = className.split(/\s+/);
+	var newClassList = "";
+	for (var i = 0; i < classList.length; i++) 
+	{
+		if (classList[i].indexOf(string) === -1)
+		{
+			newClassList = newClassList + classList[i] + " ";
+		}
+	}
+	return newClassList + newString;
+}
 
 
 function swipeLeft(){
@@ -111,93 +244,9 @@ function swipeRight(){
 	window.mySwipe.next();
 }
 
-function deleteSegment(){
+function deleteSegment(event){
 	var originalText = $( ".selected" ).html();
 	$(".selected").html("...")
 	$(".swipe-wrap > .empty-char").html(originalText);
 }
-
-function deleteToDelete(){
-	var originalText = $( ".to-delete" ).html();
-	$(".to-delete").html("...")
-	//$(".swipe-wrap > .empty-char").html(originalText);
-}
-
-
-
-
-//Left is 0, Right is 1
-var touchPositions = null;
-var touchDirections = null;
-var currentDirection = null; 
-
-var allSegments = document.getElementsByClassName("segment");
-
-for (segment = 0; segment < allSegments.length; segment++)
-{
-	allSegments[segment].addEventListener('touchstart', function(event) {
-		event.preventDefault();
-		// If there's exactly one finger inside this element
-		if (event.targetTouches.length == 1) {
-			touchPositions = new Array();
-			touchDirections = new Array();
-			var touch = event.targetTouches[0];
-		}
-	}, false);
-
-	allSegments[segment].addEventListener('touchmove', function(event) {
-		// If there's exactly one finger inside this element
-		if (event.targetTouches.length == 1) {
-		var touch = event.targetTouches[0];
-		touchPositions.push(touch.pageX);
-		}
-	}, false);
-
-	allSegments[segment].addEventListener('touchend', function(event) {
-	// If there's exactly one finger inside this element
-	if (touchPositions != null && touchPositions.length > 1 ) {
-  		//Assuming all consecurive touchPosition elements are different
-  		if (touchPositions[1] > touchPositions[0]){
-  			currentDirection = 1;
-  		}
-  		else {
-  			currentDirection = 0;
-  		}
-
-  		touchDirections.push(currentDirection);
-
-  		for(i = 2; i < touchPositions.length; i++ ) {
-  			if (touchPositions[i] > touchPositions[i-1] && touchDirections[touchDirections.length - 1] != 1){
-  				touchDirections.push(1);
-  			} 
-  			else if (touchPositions[i] < touchPositions[i-1] && touchDirections[touchDirections.length - 1] != 0) {
-  				touchDirections.push(0);
-  				
-  			}
-  		}
-
-  		var variationCount = 0;
-  		//alert(touchDirections + " length: " + touchDirections.length);
-  		if (touchDirections.length > 2) {
-  			for (i = 1; i < 3; i++) {
-  				if (touchDirections[i] !== touchDirections[i-1]) {
-  					variationCount++;
-  				}
-  			}
-
-  			if (variationCount > 1) {
-  				originalClass = event.target.className;
-  				event.target.className = originalClass + " to-delete";
-  				deleteToDelete();
-  				event.target.className = originalClass;
-  			}
-  		}
-  		touchPositions = null; 
-  		touchDirections = null;
-  		currentDirection = null;
-  	}
-  }, false);
-
-}
-
 

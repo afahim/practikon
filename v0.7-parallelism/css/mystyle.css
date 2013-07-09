@@ -20,7 +20,7 @@
   width: 100% !important;
   background: rgb(43, 12, 2);
   color: white;
-  font-size: 1.5em;
+  font-size: 1em;
   -webkit-user-select: none; /* Chrome/Safari */        
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+ */
@@ -184,6 +184,3 @@ ol {
    cursor: pointer !important;
 }
 
-#position {
-  color: white;
-}
