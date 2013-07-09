@@ -145,15 +145,11 @@ $(document).ready(function(){
 					"-option",
 					$(event.target).get(0).className) + actualOptionType;
 
-				selectedSegment.get(0).className = removeClassWith(
-					"-option",
-					classToAdd);
-
 				setTimeout(function(){
 					selectedSegment.get(0).className = removeClassWith(
 					"-option",
 					classToAdd) + choiceOptionType + " problematic";
-					}, 0);
+					}, 10);
 			});
 
 

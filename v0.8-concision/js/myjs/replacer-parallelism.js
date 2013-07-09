@@ -16,7 +16,6 @@ $(document).ready(function(){
 
 			selectedSegment.get(0).className = newClassList;
 
-			//$(".selected > .segment-delete").fadeOut(20);
 			var optionsID = selectedSegment.next().attr('id');
 			document.getElementById(optionsID).innerHTML = "";
 			$("#" + optionsID).append("<ol class=\"option\"></ol>");
