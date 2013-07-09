@@ -11,7 +11,7 @@ $(document).ready(function(){
 		
 		if (thisClass == undefined)
 		{
-			var newClassList = removeClassWith("selected-problematic", 
+			var newClassList = removeClassWith("problematic-", 
 				selectedSegment.get(0).className);
 
 			selectedSegment.get(0).className = newClassList;
@@ -45,21 +45,23 @@ $(document).ready(function(){
 		//This Code is called when "selectable" segment is clicked on the activity.
 		//It clears up the currently existent content.
 		//ToDo: Remove duplicate code
-		else if (thisClass.indexOf("problematic") !== -1 && thisClass.indexOf("selected-problematic") === -1)
+		else if (thisClass.indexOf("problematic") !== -1 && thisClass.indexOf("problematic-") === -1)
 		{
+
 			//textDirection randomly decides if problematic text moves up or down. 1 is up, 0 is down
 			textDirection = Math.round(Math.random());
 
 			$(".choices").remove();
 			var optionsID = $(event.target).next().attr('id');
 			selectedSegment = $(event.target);
+			selectedSegment.addClass("selected");
 			var segmentClass = "";
 
 			if (textDirection == 0) {
-				segmentClass = "selected-problematic-up";
+				segmentClass = "problematic-up";
 			}
 			else {
-				segmentClass = "selected-problematic-down";
+				segmentClass = "problematic-down";
 			}
 
 			if (thisClass.indexOf("good") !== -1) {
@@ -90,10 +92,6 @@ $(document).ready(function(){
 
 		//Replacing existing text with the choice that was clicked.
 		//Making existing text one of the available choices for the segment
-		//ToDo: We can get rid of jQuery UI and just rely on opacity to fade in out stuff without
-		//having to change color to grey
-		//ToDo: Instead of having a "..." in every segment div, just make one generic one and always keep
-		//it in scope mode.
 		else if (thisClass.indexOf("choice") !== -1)
 		{
 			var originalText = selectedSegment.html();
@@ -102,28 +100,28 @@ $(document).ready(function(){
 
 			if (textDirection == 0) //text is displaced up
 			{
-				classToAdd = "selected-problematic-up";
+				classToAdd = "problematic-up";
 			} else { //text is displaced down
-				classToAdd = "selected-problematic-down";
+				classToAdd = "problematic-down";
 			}
 
 			if (thisClass.indexOf("good") !== -1) {
 				classToAdd = replaceClassWith(
-					"selected-problematic",
+					"problematic",
 					selectedSegment.get(0).className,
 					classToAdd + "-good"
 					);
 			} 
 			else if (thisClass.indexOf("okay") !== -1) {
 				classToAdd = replaceClassWith(
-					"selected-problematic",
+					"problematic",
 					selectedSegment.get(0).className,
 					classToAdd + "-okay"
 					);
 			}
 			else if (thisClass.indexOf("poor") !== -1) {
 				classToAdd = replaceClassWith(
-					"selected-problematic",
+					"problematic",
 					selectedSegment.get(0).className,
 					classToAdd + "-poor"
 					);
@@ -149,7 +147,13 @@ $(document).ready(function(){
 
 				selectedSegment.get(0).className = removeClassWith(
 					"-option",
-					classToAdd) + choiceOptionType;
+					classToAdd);
+
+				setTimeout(function(){
+					selectedSegment.get(0).className = removeClassWith(
+					"-option",
+					classToAdd) + choiceOptionType + " problematic";
+					}, 0);
 			});
 
 
@@ -165,7 +169,7 @@ $(document).ready(function(){
 		//Dismissing scope modal - in case user clicks anywhere but selectable text
 		else
 		{	
-			var newClassList = removeClassWith("selected-problematic", 
+			var newClassList = removeClassWith("problematic-", 
 				selectedSegment.get(0).className);
 
 			selectedSegment.get(0).className = newClassList;
