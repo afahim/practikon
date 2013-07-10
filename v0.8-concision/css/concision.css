@@ -13,23 +13,23 @@
 
 @keyframes animation-darken
 {
-  0%{color: rgba(0, 0, 0, 0.65);}
+  0%{color: rgba(0, 0, 0, 0.5);}
   50%{color: rgba(0, 0, 0, 1);}
-  100%{color: rgba(0, 0, 0, 0.65);}
+  100%{color: rgba(0, 0, 0, 0.5);}
 }
 
 @-webkit-keyframes animation-darken /* Safari and Chrome */
 {
-  0%{color: rgba(0, 0, 0, 0.65);}
+  0%{color: rgba(0, 0, 0, 0.5);}
   50%{color: rgba(0, 0, 0, 1);}
-  100%{color: rgba(0, 0, 0, 0.65);}
+  100%{color: rgba(0, 0, 0, 0.5);}
 }
 
 .problematic {
-  -webkit-transition: letter-spacing 0.7s;
-  -moz-transition: letter-spacing 0.7s;
-  -o-transition: letter-spacing 0.7s;
-  transition: letter-spacing 0.7s;
+  -webkit-transition: letter-spacing 0.3s;
+  -moz-transition: letter-spacing 0.3s;
+  -o-transition: letter-spacing 0.3s;
+  transition: letter-spacing 0.3s;
 }
 
 .selected {
