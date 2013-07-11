@@ -36,17 +36,17 @@
  * Segments that DO have a problem, and show animation based on how the answer is rated
  */
 
-.submitted.selected.good-option {
+.submitted.problematic.good-option {
   animation:animation-good 0.6s;
   -webkit-animation:animation-good 0.6s; /* Safari and Chrome */
 }
 
-.submitted.selected.okay-option {
+.submitted.problematic.okay-option {
   animation:animation-okay 0.6s;
   -webkit-animation:animation-okay 0.6s; /* Safari and Chrome */
 }
 
-.submitted.selected.poor-option {
+.submitted.problematic.poor-option {
   animation:animation-poor 0.6s;
   -webkit-animation:animation-poor 0.6s; /* Safari and Chrome */
 }

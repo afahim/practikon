@@ -36,19 +36,19 @@
  * Segments that DO have a problem, and show animation based on how the answer is rated
  */
 
-.submitted.selected.good-option {
+.submitted.problematic.good-option {
   letter-spacing:0em;
   animation:animation-good 0.6s;
   -webkit-animation:animation-good 0.6s; /* Safari and Chrome */
 }
 
-.submitted.selected.okay-option {
+.submitted.problematic.okay-option {
   letter-spacing:0.1em;
   animation:animation-okay 0.6s;
   -webkit-animation:animation-okay 0.6s; /* Safari and Chrome */
 }
 
-.submitted.selected.poor-option {
+.submitted.problematic.poor-option {
   letter-spacing:0.2em;
   animation:animation-poor 0.6s;
   -webkit-animation:animation-poor 0.6s; /* Safari and Chrome */

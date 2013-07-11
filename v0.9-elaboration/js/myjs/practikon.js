@@ -22,5 +22,5 @@ document.onkeydown = function(evt) {
 };
 
 function submitResponse() {
-	$(".selected").addClass("submitted");
+	$(".problematic").addClass("submitted");
 }
