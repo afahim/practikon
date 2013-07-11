@@ -63,6 +63,11 @@
   display: none !important;
 }
 
+.selected {
+    background-color: rgba(0,0,0, 0.1);
+}
+
+
 /*
  * CSS for indicating non actionable text
  */
@@ -132,7 +137,6 @@
   top: 45%;
   padding-left: 1.4em;
   padding-right: 1.4em;
-  line-height: 125%;
   text-align:center;
 }
 

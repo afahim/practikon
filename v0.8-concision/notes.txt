@@ -1,3 +1,7 @@
+Update Log
+1. Added keystrokes to navigate left or right.
+2. Decoupled submitting action from trying out options.
+
 Stacie's suggested changes:
 
 1.      Make the text smaller. I think I listed 14pt in the new specs. This may still be large but let's give it a shot. (Done)

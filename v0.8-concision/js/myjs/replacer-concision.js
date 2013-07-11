@@ -27,6 +27,7 @@ $(document).ready(function(){
 			selectedSegment.removeClass("selected");
 			selectedSegment.removeClass("selected-non-problematic");
 			selectedSegment = null;
+			scopeDismissed = true;
 		}
 
 		else if (thisClass.indexOf("non-problematic") !== -1)
@@ -49,7 +50,6 @@ $(document).ready(function(){
 
 			//textDirection randomly decides if problematic text moves up or down. 1 is up, 0 is down
 			textDirection = Math.round(Math.random());
-
 			$(".choices").remove();
 			var optionsID = $(event.target).next().attr('id');
 			selectedSegment = $(event.target);
@@ -85,6 +85,7 @@ $(document).ready(function(){
 					$(".choices").append($(this).clone());
 				});
 				window.mySwipe = Swipe(document.getElementById('slider'));
+				scopeDismissed = false;
 			});
 			
 		}
@@ -182,6 +183,7 @@ $(document).ready(function(){
 			selectedSegment.removeClass("selected");
 			selectedSegment.removeClass("selected-non-problematic");
 			selectedSegment = null;
+			scopeDismissed = true;
 		}
 	});
 

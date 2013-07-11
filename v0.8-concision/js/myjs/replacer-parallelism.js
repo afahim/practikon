@@ -27,6 +27,7 @@ $(document).ready(function(){
 			selectedSegment.removeClass("selected");
 			selectedSegment.removeClass("selected-non-problematic");
 			selectedSegment = null;
+			scopeDismissed = true;
 		}
 
 		else if (thisClass.indexOf("non-problematic") !== -1)
@@ -85,6 +86,7 @@ $(document).ready(function(){
 					$(".choices").append($(this).clone());
 				});
 				window.mySwipe = Swipe(document.getElementById('slider'));
+				scopeDismissed = false;
 			});
 			
 		}
@@ -186,6 +188,7 @@ $(document).ready(function(){
 			selectedSegment.removeClass("selected");
 			selectedSegment.removeClass("selected-non-problematic");
 			selectedSegment = null;
+			scopeDismissed = true;
 		}
 	});
 

@@ -37,7 +37,7 @@
  * Segments that DO have a problem, move UP
  */
 
-.problematic-up-good {
+.submitted.problematic-up-good {
   background-color: rgba(0,0,0, 0.1);
   bottom: 0px;
   -webkit-transition: bottom 0.7s, top 0.7s;
@@ -46,7 +46,7 @@
   transition: bottom 0.7s, top 0.7s;
 }
 
-.problematic-up-poor {
+.submitted.problematic-up-poor {
   background-color: rgba(0,0,0, 0.1);
   bottom: 10px;
   -webkit-transition: bottom 0.7s, top 0.7s;
@@ -55,7 +55,7 @@
   transition: bottom 0.7s, top 0.7s;
 }
 
-.problematic-up-okay {
+.submitted.problematic-up-okay {
   background-color: rgba(0,0,0, 0.1);
   bottom: 5px;
   -webkit-transition: bottom 0.7s, top 0.7s;
@@ -68,7 +68,7 @@
  * Segments that DO have a problem, and move DOWN
  */
 
-.problematic-down-good {
+.submitted.problematic-down-good {
   background-color: rgba(0,0,0, 0.1);
   top: 0px;
   -webkit-transition: bottom 0.7s, top 0.7s;
@@ -77,7 +77,7 @@
   transition: bottom 0.7s, top 0.7s;
 }
 
-.problematic-down-poor {
+.submitted.problematic-down-poor {
   background-color: rgba(0,0,0, 0.1);
   top: 10px;
   -webkit-transition: bottom 0.7s, top 0.7s;
@@ -86,7 +86,7 @@
   transition: bottom 0.7s, top 0.7s;
 }
 
-.problematic-down-okay {
+.submitted.problematic-down-okay {
   background-color: rgba(0,0,0, 0.1);
   top: 5px;
   -webkit-transition: bottom 0.7s, top 0.7s;
@@ -99,17 +99,17 @@
  * Segments that DO have a problem, and show animation based on how the answer is rated
  */
 
-.selected.good-option {
+.submitted.selected.good-option {
   animation:animation-good 0.6s;
   -webkit-animation:animation-good 0.6s; /* Safari and Chrome */
 }
 
-.selected.okay-option {
+.submitted.selected.okay-option {
   animation:animation-okay 0.6s;
   -webkit-animation:animation-okay 0.6s; /* Safari and Chrome */
 }
 
-.selected.poor-option {
+.submitted.selected.poor-option {
   animation:animation-poor 0.6s;
   -webkit-animation:animation-poor 0.6s; /* Safari and Chrome */
 }
