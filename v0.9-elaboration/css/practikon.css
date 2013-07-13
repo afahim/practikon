@@ -131,10 +131,11 @@
 .choices {
   display: block;
   height: 100%;
+
 }
 
 .choice {
-  top: 45%;
+  top: 35%;
   padding-left: 1.4em;
   padding-right: 1.4em;
   text-align:center;

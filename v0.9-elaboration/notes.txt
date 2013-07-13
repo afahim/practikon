@@ -2,16 +2,10 @@ Update Log
 1. Added keystrokes to navigate left or right.
 2. Decoupled submitting action from trying out options.
 
-Stacie's suggested changes:
-
-1.      Make the text smaller. I think I listed 14pt in the new specs. This may still be large but let's give it a shot. (Done)
-2.      Make the text more gray. I think I listed 60% in the specs. Again, we may need to go to 50% if this isn't enough. (Done)
-3.      Can we place the first line of text options inline with the arrows and have the 'x' remain in the upper left. I just think the alignment of the arrows and text will help people grasp the navigation scheme more quickly. (Done)
-4.      When a piece of text is selected from the bottom options, can we have it replace the text at the top WITHOUT making any other changes to the text (color, baseline, etc.) UNTIL they click a submit button? Suguru and I talked about the value of having the pause and a chance to see a response in the paragraph before checking it, similar to the DuoLingo piece. (This makes sense. Where is this submit button tho?)
-5.      Is there a way to add a line space at the bottom of the paragraph so that this text doesn't overlap the edit options? (I've worked on this by making the choices almost opaque. We intentionally made the text scrollable so that people can view the choices and the part of the text they want to focus on as they please. However if you want the choices to never overlap the text, that is possible as well.)
 
 My Own Feedback:
 1. Glare which comes when a non-problematic segment is selected should start with 100% darkness and then fade out to 50%, not the other way round like it currently is.
+2. Very long choices tend to get cropped at the bottom. Figure out a way!
 
 Firas's iPhone Feedback:
 
