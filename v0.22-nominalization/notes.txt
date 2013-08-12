@@ -1,0 +1,20 @@
+Suguru's Feedback
+1. Finish Activities
+2. Navigation "Set"
+3. Ping Mollie - Set up a time to see when she is coming
+4. Navigation Next Week
+5. Connect same time wednesday and talk about navigation.
+6. Last day - 15th
+7. Documentation to access the Server
+
+Stacie's Navigation Sketch
+1. 
+
+
+My Own Feedback:
+1. Glare which comes when a non-problematic segment is selected should start with 100% darkness and then fade out to 50%, not the other way round like it currently is.
+2. Very long choices tend to get cropped at the bottom. Figure out a way!
+
+Firas's iPhone Feedback:
+1. Hard to click replacement choice. Make whole swipeable clickable
+

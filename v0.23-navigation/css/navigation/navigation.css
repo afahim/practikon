@@ -1,0 +1,102 @@
+/* ==========================================================================
+  CSS Overrides for NPRP Project
+  ========================================================================== */
+
+/**
+ * Foundation overrides
+ */
+
+.row {
+  max-width: 75em;
+}
+
+/**
+ * Background and Body
+ */
+
+#page-header-container{
+  background: rgba(12,12,12,0.1);
+}
+
+#page-header {
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:1em;
+  text-align: center;
+}
+
+
+body {
+  width: 100% !important;
+  font-size: 1.5em;
+}
+
+.button-container {
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
+}
+
+.foundicon-home {
+  position: absolute;
+  left: 4%;
+  color: white;
+}
+
+.foundicon-home {
+  position: absolute;
+  left: 4%;
+  color: white;
+}
+
+.activity-nav-button {
+  position: absolute;
+  top: -3em;
+  font-size: 1em;
+}
+
+.right-button {
+  right: 0.5em;
+}
+
+.swipe-compartment {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  background: white;
+  color: black;
+  font-size: 14pt;
+  line-height:50px;
+  height: 25em;
+  color: white;
+}
+
+.context {
+  background: purple;
+  overflow: visible;
+}
+
+#guide {
+  background: darkgreen;
+}
+
+.swipe-wrap {
+  overflow: visible;
+}
+
+#slider2 {
+  overflow: visible;
+}
+
+.context-active{
+  color: purple;
+}
+
+.guide-active{
+  color: darkgreen;
+}
+
+
+
+

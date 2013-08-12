@@ -1,0 +1,20 @@
+/* ==========================================================================
+  CSS Overrides for NPRP Project
+  ========================================================================== */
+
+/**
+ * Foundation overrides
+ */
+
+#list-heading {
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 5%;
+  color: rgb(238, 201, 5);
+}
+
+.exercise-context {
+  margin-left: 5%;
+  margin-right: 5%;
+  color: black;
+}

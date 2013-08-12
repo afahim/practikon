@@ -1,0 +1,186 @@
+/* ==========================================================================
+  CSS Overrides for NPRP Project
+  ========================================================================== */
+
+/**
+ * Foundation overrides
+ */
+
+.row {
+  max-width: 75em;
+}
+
+
+
+/**
+ * Background and Body
+ */
+
+ body {
+  width: 100% !important;
+  background: rgb(43, 12, 2);
+  color: white;
+  font-size: 1em;
+  -webkit-user-select: none; /* Chrome/Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+}
+
+
+/**
+ * Configuring Editable Area Responsively.
+ */
+ #editable {
+   margin-top: 3%;
+   padding-bottom: 20% !important;
+   cursor: default;
+}
+
+/**
+ * Spacing between successive lines to make it easier to select lines.
+ */
+.segment {
+  line-height:200%;
+  padding-right: 5px;
+  padding-left: 5px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  margin-right: 0.6em;
+  display: inline;
+  background-color: rgba(127, 70, 40, .4);
+  border-radius: 5px;
+  position: relative;
+  -webkit-transition: background-color 0.5s, padding-left 0.5s ;
+  -moz-transition: background-color 0.5s, padding-left 0.5s;
+  -o-transition: background-color 0.5s, padding-left 0.5s;
+  transition:background-color 0.5s, padding-left 0.5s;
+}
+
+.segment:hover {
+  background-color: rgba(250, 230, 104, 0.6);
+}
+
+
+.segment > i {
+  display: none;
+}
+
+/*
+ * CSS for selected segment
+ */
+.selected {
+  background-color: rgba(250, 230, 104, 0.6);
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+
+.selected > i {
+  display: inline;
+  font-size: 0.95em;
+  padding: 0px !important;
+  top: 0.1em;
+  right: 5px;
+  margin-right: 2px;
+  margin-left: 3px;
+  position: relative;
+  width: px !important;
+}
+
+
+
+/*
+ * CSS for indicating non actionable text
+ */
+.non-actionable {
+  line-height:200%;
+  padding: 5px;
+  margin-right: 2px;
+  display: inline;
+}
+
+/*
+ * Positioning scope mode window and its children
+ */
+
+ #scope-modal {
+  background: white;
+  color: black;
+  position:fixed;
+  bottom:0px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  height: 20%;
+  display: none;
+  padding: 0%;
+}
+
+#scope-cross {
+  position: absolute;
+  top: 5%;
+  right: 0.5%;
+  font-size: 1em;
+  z-index:10
+}
+
+.scope-nav {
+  display: none;
+  position: absolute;
+  color: grey;
+  top: 50%;
+  font-size: 1em;
+  z-index:10
+}
+
+#scope-left {
+  left: 0.5%;
+}
+
+#scope-right {
+  right: 0.5%;
+}
+
+/**
+ * Making sure scope modal stays fixed regardless of horizontal overflow.
+ */
+.choices {
+  display: block;
+}
+
+.choice {
+  padding-left: 1.4em;
+  padding-right: 1.4em;
+  line-height: 175%;
+  text-align:center;
+}
+
+.choice > i {
+  display: none !important;
+}
+
+
+/*
+ * Hiding segment replacements
+ */
+
+.option {
+  display: none;
+}
+
+/*
+ * Hiding icons from bullet lists
+ */
+ol {
+    list-style-type: none;
+}
+
+/*
+ * CSS for making the whole document clickable - to ensure scope dismissal works on iOS devices.
+ * ToDo: Create a media query to have it enabled only for iOS devices.
+ * ToDo: Check if we still need this for now. Perhaps we don't
+ */
+* {
+   -webkit-tap-highlight-color: rgba(0, 0, 0, 0); 
+   cursor: pointer !important;
+}
+
