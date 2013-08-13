@@ -51,12 +51,24 @@ body {
 
 .activity-nav-button {
   position: absolute;
-  top: -3em;
-  font-size: 1em;
+  bottom: 0.7em;
+  font-size: 0.7em;
 }
 
-.right-button {
+#context-button {
+  left: 0.5em;
+}
+
+#guide-button {
   right: 0.5em;
+}
+
+.context-active{
+  color: purple;
+}
+
+.guide-active{
+  color: darkgreen;
 }
 
 .swipe-compartment {
@@ -87,14 +99,6 @@ body {
 
 #slider2 {
   overflow: visible;
-}
-
-.context-active{
-  color: purple;
-}
-
-.guide-active{
-  color: darkgreen;
 }
 
 

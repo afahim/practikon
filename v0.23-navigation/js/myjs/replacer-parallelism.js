@@ -1,23 +1,25 @@
 	var selectedSegment = null;
 	var textDirection = null;
 
-  	document.getElementById("left-button0").className = document.getElementById("left-button0").className + " context-active";
-
-
 	window.mySwipe2 = new Swipe(document.getElementById('slider2'), {
   		transitionEnd: function(index, elem) {
 
 			var swipeNumber = window.mySwipe2.getPos();
 
+  			$("#context-button").addClass("context-active");
+
   			if (swipeNumber == 0) {
-  				document.getElementById("left-button0").className = document.getElementById("left-button0").className + " context-active";
+  				$("#guide-button").removeClass("guide-active");
+  				$("#context-button").addClass("context-active");
   			}
   			else if (swipeNumber == 2) {
-  				document.getElementById("right-button2").className = document.getElementById("right-button2").className + " guide-active";
+  				$("#guide-button").addClass("guide-active");
+  				$("#context-button").removeClass("context-active");
+
   			} 
   			else {
-  				$(".activity-nav-button").removeClass("context-active");
-  				$(".activity-nav-button").removeClass("guide-active");
+   				$("#context-button").removeClass("context-active");
+  				$("#guide-button").removeClass("guide-active");
   			}
 
   		}
