@@ -6,8 +6,6 @@
 
 			var swipeNumber = window.mySwipe2.getPos();
 
-  			$("#context-button").addClass("context-active");
-
   			if (swipeNumber == 0) {
   				$("#guide-button").removeClass("guide-active");
   				$("#context-button").addClass("context-active");
@@ -159,8 +157,9 @@
 
 			$(event.target).fadeOut("slow", function(){
 				$(this).html(originalText).hide();
-				$(this).fadeIn("slow");
-
+				$(this).fadeIn("slow", function(){
+					$("#scope-modal-message > span").css("visibility", "visible");
+				});
 				selectedSegment.html(selectedChoice).hide();
 				selectedSegment.css("opacity", "1");
 				selectedSegment.show();
@@ -181,11 +180,14 @@
 			});
 
 
+
 		}
 
 		// Not dismissing scope mode if clicked on by the user
 		// ToDo: Change global clicks to onClicks to avoid overhead of going through this list sequentially
-		else if (thisClass.indexOf("no-slide") !== -1 || thisClass.indexOf("segment-delete") !== -1)
+		else if (thisClass.indexOf("no-slide") !== -1 
+			|| thisClass.indexOf("segment-delete") !== -1
+			|| thisClass.indexOf("response-submitter") !== -1)
 		{
 
 		}

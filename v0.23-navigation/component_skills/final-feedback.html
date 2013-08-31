@@ -30,77 +30,25 @@
 			<i class="foundicon-home"></i>
 		</div>
 		<div id="page-header">practikon</div>
-		<div id="context-button" class="activity-nav-button context-active" onClick="window.mySwipe2.prev();">
-			< context
-		</div>
-		<div id="guide-button" class="activity-nav-button" onClick="window.mySwipe2.next();">
-			guide >
-		</div>
 
 	</div>
 
-<div id='slider2' class='swipe'>
-  <div class='swipe-wrap'>
-    <div id="context" class="swipe-compartment">
-    	You are about to read a sentence that is part of a <span class="highlighted">proposal</span> encouraging professionals to use <span class="highlighted">Edocs</span>.
-    </div>
-
-	<!--div class="row"-->
-		<div class="swipe-compartment">
-			<!--CONTENT STARTS HERE><-->
-			<div id = "editable">
-
-				<div class="segment non-problematic" id="0">
-					<i class="segment-delete foundicon-remove" onclick="deleteSegment()"></i>
-					The new body scanners
-				</div>
-
-				<div class="segment non-problematic" id="0">
-					<i class="segment-delete foundicon-remove" onclick="deleteSegment()"></i>
-					are less likely
-				</div>
-
-				<div class="segment non-problematic" id="0">
-					<i class="segment-delete foundicon-remove" onclick="deleteSegment()"></i>
-					to cause complaints
-				</div>
-
-				<div class="segment non-problematic" id="0">
-					<i class="segment-delete foundicon-remove" onclick="deleteSegment()"></i>
-					of privacy and
-				</div>
-
-				<div class="segment problematic poor-option" id="0">
-					<i class="segment-delete foundicon-remove" onclick="deleteSegment()"></i>
-					being exposed to radiation.
-				</div>
-				<ol class="option" id="option4">
-					<div id="1" class="choice no-slide good-option">
-						<i class="segment-delete foundicon-remove" onclick="deleteSegment()"></i>
-						radiation exposure.
-					</div>
-					<div id="2" class="choice no-slide okay-option">
-						<i class="segment-delete foundicon-remove" onclick="deleteSegment()"></i>
-						risky radiation exposure.
-					</div>
-					<div id="3" class="choice no-slide poor-option">
-						<i class="segment-delete foundicon-remove" onclick="deleteSegment()"></i>
-						exposing oneself to radiation.
-					</div>
-				</ol>
-
-			</div>
-			<!--CONTENT ENDS HERE><-->
-
+	<div id = "editable">
+		<div id="points-container" class = "feedback-screen">
+			<span id="good-points" class="point-counter">0</span> I
+			<span id="okay-points" class="point-counter">0</span> I
+			<span id="poor-points" class="point-counter">0</span>
+			<i class="foundicon-home"></i>
 		</div>
-	<!--/div-->
-    
-    <div id="guide" class="swipe-compartment">
-    	This paragraph may seem long because the sentences include <span class="highlighted">unnecessary information</span>. Fix it. Select the phrase that you think is problematic and choose the <span class="highlighted">most effective way to make the paragraph more concise.</span>
-    </div>
-  </div>
-</div>
+	</div>
 
+	<div id="animated-gif">
+		<img src="./animated-gif.png"></img>
+	</div>
+
+	<div id="feedback-text">
+		Pay close attention to the guide for help.
+	</div>
 
 	<div class="no-slide row" id="scope-modal">
 		<i id="scope-cross" class="foundicon-remove"></i>

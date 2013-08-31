@@ -7,15 +7,44 @@
  */
 
 .row {
-  max-width: 75em;
+  min-width: 100%;
 }
+
+.highlighted {
+  color: rgb(238, 201, 5);
+}
+
 
 /**
  * Background and Body
  */
+a:hover {
+  color: black;
+}
+
+#page-header-container{
+  background: rgb(230,230,230);
+  height: 60px;
+}
+
+#page-header {
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
+  font-weight: 700;
+  font-size: 24pt;
+  position: relative;
+}
+
+.foundicon-home {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  color: white;
+}
 
  body {
-  width: 100% !important;
+  font-family: "depot-new-condensed-web";
   background: white;
   color: black;
   font-size: 14pt;
@@ -30,14 +59,13 @@
  #editable {
    margin-bottom: 25% !important;
    cursor: default;
+   color: rgb(128, 128, 128);
 }
 
 /**
  * Segment - One selectable piece of text in the activity.
  */
 .segment {
-  font-family: Sans-Serif;
-  color: rgba(0, 0, 0, 0.5);
   font-size: 14pt;
   line-height:50px;
   display: inline;
@@ -133,7 +161,7 @@
 }
 
 .choice {
-  top: 35%;
+  top: 15%;
   padding-left: 1.4em;
   padding-right: 1.4em;
   text-align:center;
@@ -171,28 +199,4 @@ ol {
 
 #position {
   color: white;
-}
-
-.points-counter {
-  top:100px;
-}
-
-#points-container {
-  padding-top: 1em;
-  margin-left:auto;
-  margin-right:auto;
-  text-align: center;
-  position: relative;
-}
-
-#good-points{
-  color: green;
-}
-
-#okay-points{
-  color: orange;
-}
-
-#poor-points{
-  color: red;
 }
