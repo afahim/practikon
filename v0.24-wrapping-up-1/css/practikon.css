@@ -1,0 +1,221 @@
+/* ==========================================================================
+  Foundation CSS Overrides for Practikon
+  ========================================================================== */
+
+
+/**
+ * Foundation overrides
+ */
+
+ .row {
+  min-width: 100%;
+}
+
+.highlighted {
+  color: rgb(255, 153, 0);
+}
+
+
+/**
+ * Background and Body
+ */
+ a:hover {
+  color: black;
+}
+
+a {
+  color: black;
+}
+
+#page-header-container{
+  background: rgb(230,230,230);
+  height: 60px;
+}
+
+#page-header {
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
+  font-weight: 700;
+  font-size: 24pt;
+  position: relative;
+}
+
+.foundicon-home {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  color: white;
+}
+
+body {
+  font-family: "depot-new-condensed-web";
+  background: white;
+  color: black;
+  font-size: 14pt;
+  -webkit-user-select: none; /* Chrome/Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+}
+
+/**
+ * Configuring Editable Area Responsively.
+ */
+ #editable {
+  margin-bottom: 25% !important;
+  cursor: default;
+  color: rgb(128, 128, 128);
+}
+
+/**
+ * Segment - One selectable piece of text in the activity.
+ */
+ .segment {
+  display: inline;
+  position: relative;
+}
+
+.segment:hover {
+  /*background-color: rgba(250, 230, 104, 0.6);*/
+}
+
+
+.segment > i {
+  display: none;
+}
+
+/*
+ * segment-delete
+ * A class for all the delete buttons inside text in the activity.
+ */
+ .segment-delete {
+  display: none !important;
+}
+
+.selected {
+  background-color: rgba(0,0,0, 0.1);
+}
+
+
+/*
+ * CSS for indicating non actionable text
+ */
+ .non-actionable {
+  line-height:200%;
+  padding: 5px;
+  margin-right: 2px;
+  display: inline;
+}
+
+/*
+ * Positioning scope mode window and its children
+ */
+
+ #scope-modal {
+  background: rgba(227, 227, 220, 0.9);
+  color: black;
+  position:fixed;
+  bottom:0px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  height: 20%;
+  display: none;
+  padding: 0%;
+}
+
+#scope-cross {
+  position: absolute;
+  top: 5%;
+  right: 0.5%;
+  font-size: 1em;
+  z-index:10
+}
+
+.scope-nav {
+  display: none;
+  position: absolute;
+  color: grey;
+  top: 50%;
+  font-size: 1em;
+  z-index:10
+}
+
+#scope-left {
+  left: 0.5%;
+}
+
+#scope-right {
+  right: 0.5%;
+}
+
+#slider {
+  height: 100%;
+}
+
+
+/**
+ * Making sure scope modal stays fixed regardless of horizontal overflow.
+ */
+ .choices {
+  display: block;
+  height: 100%;
+
+}
+
+.choice {
+  top: 15%;
+  padding-left: 1.4em;
+  padding-right: 1.4em;
+  text-align:center;
+}
+
+.choice > i {
+  display: none !important;
+}
+
+
+/*
+ * Hiding segment replacements
+ */
+
+ .option {
+  display: none;
+}
+
+/*
+ * Hiding icons from bullet lists
+ */
+ ol {
+  list-style-type: none;
+}
+
+/*
+ * CSS for making the whole document clickable - to ensure scope dismissal works on iOS devices.
+ * ToDo: Create a media query to have it enabled only for iOS devices.
+ * ToDo: Check if we still need this for now. Perhaps we don't
+ */
+ * {
+   -webkit-tap-highlight-color: rgba(0, 0, 0, 0); 
+   cursor: pointer !important;
+ }
+
+ #position {
+  color: white;
+}
+
+#page-header {
+  margin-top: 20px;
+}
+
+.heading-row {
+  color: rgb(255, 153, 0);
+}
+
+HR {
+  border-color: black;
+  width: 100%;
+  margin-left: auto ;
+  margin-right: auto ;
+  line-height: 12pt
+}

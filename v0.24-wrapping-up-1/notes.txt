@@ -5,6 +5,7 @@ Feedback:
 1. Randomly picked animation
 2. Make three folders for each level
 3. Lazy loading of GIF files
+3. Integrate Images.zip that Stacie sent
 4. Red screen first then white and then you decide if you want the context or the guide.
 5. Sets need to be editable on homepage
 6. Make folder for defining the set
