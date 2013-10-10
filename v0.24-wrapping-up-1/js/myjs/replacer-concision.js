@@ -1,46 +1,66 @@
-$(document).ready(function(){
+var selectedSegment = null;
 
-	var selectedSegment = null;
-	var textDirection = null;
+window.mySwipe2 = new Swipe(document.getElementById('slider2'), {
+	startSlide: 1,
+	transitionEnd: function(index, elem) {
 
-	$(document).click(function(event){
-		var thisClass = $(event.target).attr('class');
-		var thisID = $(event.target).attr('id');
+		var swipeNumber = window.mySwipe2.getPos();
 
-		//alert(thisClass + ":" + thisID );
+		if (swipeNumber == 0) {
+			$("#guide-button").removeClass("guide-active");
+			$("#context-button").addClass("context-active");
+		}
+		else if (swipeNumber == 2) {
+			$("#guide-button").addClass("guide-active");
+			$("#context-button").removeClass("context-active");
+
+		} 
+		else {
+			$("#context-button").removeClass("context-active");
+			$("#guide-button").removeClass("guide-active");
+		}
+	}
+});
+
+//Retrieving data from content file
+$( "#editable" ).load( "./" + $("#content-file").text() );
+
+$(document).click(function(event){
+	var thisClass = $(event.target).attr('class');
+	var thisID = $(event.target).attr('id');
+	
+	if (thisClass == undefined)
+	{
+		var newClassList = removeClassWith("problematic-", 
+			selectedSegment.get(0).className);
+
+		selectedSegment.get(0).className = newClassList;
+
+		var optionsID = selectedSegment.next().attr('id');
+		document.getElementById(optionsID).innerHTML = "";
+		$("#" + optionsID).append("<ol class=\"option\"></ol>");
+		$(".choices").each(function(){
+			$("#" + optionsID).append($(this).html());
+		});
+		$(".scope-nav").hide();
+		$('#scope-modal').slideUp(600);
+		selectedSegment.removeClass("selected");
+		selectedSegment.removeClass("selected-non-problematic");
+		selectedSegment = null;
+		scopeDismissed = true;
+	}
+
+	else if (thisClass.indexOf("non-problematic") !== -1)
+	{
+		selectedSegment = $(event.target);
+		selectedSegment.addClass("selected-non-problematic");
+		var segmentToUnselect = selectedSegment;
+		selectedSegment = null;
+		setTimeout(function(){
+			segmentToUnselect.removeClass("selected-non-problematic");
+		},700);
 		
-		if (thisClass == undefined)
-		{
-			var newClassList = removeClassWith("problematic-", 
-				selectedSegment.get(0).className);
-
-			selectedSegment.get(0).className = newClassList;
-
-			var optionsID = selectedSegment.next().attr('id');
-			document.getElementById(optionsID).innerHTML = "";
-			$("#" + optionsID).append("<ol class=\"option\"></ol>");
-			$(".choices").each(function(){
-				$("#" + optionsID).append($(this).html());
-			});
-			$(".scope-nav").hide();
-			$('#scope-modal').slideUp(600);
-			selectedSegment.removeClass("selected");
-			selectedSegment.removeClass("selected-non-problematic");
-			selectedSegment = null;
-			scopeDismissed = true;
-		}
-
-		else if (thisClass.indexOf("non-problematic") !== -1)
-		{
-			selectedSegment = $(event.target);
-			selectedSegment.addClass("selected-non-problematic");
-			var segmentToUnselect = selectedSegment;
-			selectedSegment = null;
-			setTimeout(function(){
-				segmentToUnselect.removeClass("selected-non-problematic");
-			},700);
-			
-		}
+	}
 
 		//This Code is called when "selectable" segment is clicked on the activity.
 		//It clears up the currently existent content.
@@ -48,20 +68,11 @@ $(document).ready(function(){
 		else if (thisClass.indexOf("problematic") !== -1 && thisClass.indexOf("problematic-") === -1)
 		{
 
-			//textDirection randomly decides if problematic text moves up or down. 1 is up, 0 is down
-			textDirection = Math.round(Math.random());
 			$(".choices").remove();
 			var optionsID = $(event.target).next().attr('id');
 			selectedSegment = $(event.target);
 			selectedSegment.addClass("selected");
 			var segmentClass = "";
-
-			if (textDirection == 0) {
-				segmentClass = "problematic-up";
-			}
-			else {
-				segmentClass = "problematic-down";
-			}
 
 			if (thisClass.indexOf("good") !== -1) {
 				segmentClass = segmentClass + "-good"
@@ -97,14 +108,6 @@ $(document).ready(function(){
 			var originalText = selectedSegment.html();
 			var selectedChoice = $(event.target).html();
 			var classToAdd = "";
-
-			if (textDirection == 0) //text is displaced up
-			{
-				classToAdd = "problematic-up";
-			} 
-			else { //text is displaced down
-				classToAdd = "problematic-down";
-			}
 
 			if (thisClass.indexOf("good") !== -1) {
 				classToAdd = replaceClassWith(
@@ -148,9 +151,9 @@ $(document).ready(function(){
 
 				setTimeout(function(){
 					selectedSegment.get(0).className = removeClassWith(
-					"-option",
-					classToAdd) + choiceOptionType + " problematic";
-					}, 10);
+						"-option",
+						classToAdd) + choiceOptionType + " problematic";
+				}, 10);
 			});
 
 
@@ -187,7 +190,6 @@ $(document).ready(function(){
 		}
 	});
 
-});
 
 
 function swipeLeft(){

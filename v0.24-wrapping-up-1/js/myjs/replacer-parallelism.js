@@ -187,7 +187,7 @@
 
 		}
 
-		// Not dismissing scope mode if clicked on by the user
+				// Not dismissing scope mode if clicked on by the user
 		// ToDo: Change global clicks to onClicks to avoid overhead of going through this list sequentially
 		else if (thisClass.indexOf("no-slide") !== -1 
 			|| thisClass.indexOf("segment-delete") !== -1
@@ -195,7 +195,6 @@
 		{
 
 		}
-
 		//Dismissing scope modal - in case user clicks anywhere but selectable text
 		else
 		{	
