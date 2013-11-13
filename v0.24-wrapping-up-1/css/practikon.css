@@ -219,3 +219,7 @@ HR {
   margin-right: auto ;
   line-height: 12pt
 }
+
+.set-number {
+  display: none;
+}
