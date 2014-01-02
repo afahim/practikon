@@ -1,5 +1,5 @@
 /* ==========================================================================
-  Foundation CSS Overrides for Nominalization Activities
+  Animation and styling for Correctness & Elaboration Activities
   ========================================================================== */
 
 /*
@@ -42,15 +42,11 @@
 }
 
 .submitted.problematic.okay-option {
-  color:transparent;
-  text-shadow: 0 0 5px rgba(0,0,0,0.99);
   animation:animation-okay 0.6s;
   -webkit-animation:animation-okay 0.6s; /* Safari and Chrome */
 }
 
 .submitted.problematic.poor-option {
-  color:transparent;
-  text-shadow: 0 0 5px rgba(0,0,0,0.5);
   animation:animation-poor 0.6s;
   -webkit-animation:animation-poor 0.6s; /* Safari and Chrome */
 }

@@ -1,25 +1,19 @@
 /* ==========================================================================
-  Foundation CSS Overrides for fPractikon
+  General Styling for All Practikon pages
   ========================================================================== */
-
 
 /**
  * Foundation overrides
  */
 
- .row {
+.row {
   min-width: 100%;
 }
-
-.highlighted {
-  color: rgb(255, 153, 0);
-}
-
 
 /**
  * Background and Body
  */
- a:hover {
+a:hover {
   color: black;
 }
 
@@ -59,10 +53,14 @@ body {
   -ms-user-select: none; /* IE10+ */
 }
 
+.highlighted {
+  color: rgb(255, 153, 0);
+}
+
 /**
- * Configuring Editable Area Responsively.
+ * Configuring editable area to be responsive.
  */
- #editable {
+#editable {
   margin-bottom: 25% !important;
   cursor: default;
   color: rgb(128, 128, 128);
@@ -71,7 +69,7 @@ body {
 /**
  * Segment - One selectable piece of text in the activity.
  */
- .segment {
+.segment {
   display: inline;
   position: relative;
 }
@@ -89,7 +87,7 @@ body {
  * segment-delete
  * A class for all the delete buttons inside text in the activity.
  */
- .segment-delete {
+.segment-delete {
   display: none !important;
 }
 
@@ -111,8 +109,7 @@ body {
 /*
  * Positioning scope mode window and its children
  */
-
- #scope-modal {
+#scope-modal {
   background: rgba(227, 227, 220, 0.9);
   color: black;
   position:fixed;
@@ -158,7 +155,7 @@ body {
 /**
  * Making sure scope modal stays fixed regardless of horizontal overflow.
  */
- .choices {
+.choices {
   display: block;
   height: 100%;
 
@@ -180,14 +177,14 @@ body {
  * Hiding segment replacements
  */
 
- .option {
+.option {
   display: none;
 }
 
 /*
  * Hiding icons from bullet lists
  */
- ol {
+ol {
   list-style-type: none;
 }
 
@@ -196,10 +193,10 @@ body {
  * ToDo: Create a media query to have it enabled only for iOS devices.
  * ToDo: Check if we still need this for now. Perhaps we don't
  */
- * {
+* {
    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); 
    cursor: pointer !important;
- }
+}
 
  #position {
   color: white;

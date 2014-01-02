@@ -6,8 +6,8 @@
 /*---------------------------------------------------------------------------
     Miscellaneous operations for setting up activity
     -------------------------------------------------------------------------*/
-var selectedSegment, thisClass, activityType, textDirection;
-var swipeLeft, swipeRight, submitResponse;
+var selectedSegment, selectedChoice, thisClass, activityType, textDirection;
+var submitResponse;
 
 window.onload=function() {
 
@@ -22,13 +22,13 @@ window.onload=function() {
         thisClass = $(event.target).attr('class');
         var thisID = $(event.target).attr('id');
         
+        console.log(thisClass);
+
         if (thisClass == undefined) {
-            console.log("modal dismiss detected");
             dismissScopeModal(event);
         }
 
         else if (thisClass.indexOf("non-problematic") !== -1) {
-            console.log("non problematic detected");
             animateNonProblematic(event);          
         }
 
@@ -42,7 +42,6 @@ window.onload=function() {
         //Replacing existing text with the choice that was clicked.
         //Making existing text one of the available choices for the segment
         else if (thisClass.indexOf("choice") !== -1) {
-            console.log("choice detected");
             replaceChoice(event, thisClass);
         }
 
@@ -102,7 +101,7 @@ window.onload=function() {
                     $("#guide-button").removeClass("guide-active");
                     $("#context-button").addClass("context-active");
                     $("#guide-button").fadeOut(150, function() {
-                        $(this).text("back>").fadeIn(200);
+                        $(this).text("back >").fadeIn(200);
                     });
                     transitioningFrom = 0;
                 }
@@ -110,7 +109,7 @@ window.onload=function() {
                     $("#context-button").removeClass("context-active");
                     $("#guide-button").addClass("guide-active");
                     $("#context-button").fadeOut(150, function() {
-                        $(this).text("<back").fadeIn(200);
+                        $(this).text("< back").fadeIn(200);
                     });
                     transitioningFrom = 2;
                 } 
@@ -130,14 +129,6 @@ window.onload=function() {
                 }
             }
         });
-
-    swipeLeft = function () {
-        window.mySwipe.prev();
-    }
-
-    swipeRight = function () {
-        window.mySwipe.next();
-    }
 
 /*---------------------------------------------------------------------------
     Submitting a response once an activity is completed
@@ -201,7 +192,7 @@ window.onload=function() {
     Replacing chosen answer with corrently selected answer in the activity
     -------------------------------------------------------------------------*/
 
-    function replaceChoice (event, thisClass) {
+function replaceChoice (event, thisClass) {
         var originalText = selectedSegment.html();
         var selectedChoice = $(event.target).html();
         var classToAdd = "";
@@ -275,7 +266,6 @@ window.onload=function() {
     -------------------------------------------------------------------------*/
 
 function dismissScopeModal(event) {
-    selectedSegment = $(event.target);
     var newClassList = removeClassWith("problematic-", 
         selectedSegment.get(0).className);
 

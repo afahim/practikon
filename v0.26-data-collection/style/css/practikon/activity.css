@@ -1,10 +1,6 @@
 /* ==========================================================================
-  CSS Overrides for NPRP Project
+  General Styling for Activities in Practikon
   ========================================================================== */
-
-/**
- * Foundation overrides
- */
 
 /**
  * Background and Body
@@ -17,7 +13,6 @@
 #content-file {
   display: none;
 }
-
 
 .feedback-screen {
   margin-top: 100px;
@@ -167,15 +162,6 @@
   line-height: 28pt;
   min-height: 36pt;
 }
-
-.swipe-wrap {
-
-}
-
-#slider2 {
-
-}
-
 
 
 

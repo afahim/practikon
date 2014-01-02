@@ -1,5 +1,5 @@
 /* ==========================================================================
-  Foundation CSS Overrides for Parallelism Activities
+  Animation and styling for Parallelism Activities
   ========================================================================== */
 
 /*
@@ -131,7 +131,6 @@
   -o-transition: bottom 0.7s, top 0.7s;
   transition: bottom 0.7s, top 0.7s;
 }
-
 
 /*
  * Segments that DO have a problem, and show animation based on how the answer is rated

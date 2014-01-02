@@ -2,3 +2,10 @@ We are focusing on Coherence, Concision, Parallelism and Correctness
 
 I'm adding meta tages to each activity type html page so that practikon.js can figure out which activity is being carried out.
 
+Using images isn't good for us - we need to either use css based icons or png's to make load times faster. Can we get rid of the home page img and use an icon instead? I can find nice icons if Stacie can't.
+
+navigation.css is now activity.css
+
+ToDo's
+
+Get rid of .click, and replace everything with onClicks
