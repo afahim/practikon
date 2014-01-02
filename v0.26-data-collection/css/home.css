@@ -1,0 +1,50 @@
+/* ==========================================================================
+  CSS Overrides for Exercise Sets Home Page (index.html)
+  ========================================================================== */
+
+.points-container {
+	position:absolute;
+	right:0px;
+	margin-right: 7.5%;
+	color: black;
+}
+
+#good-points{
+  color: rgb(51, 153, 51);
+}
+
+#okay-points{
+  color: rgb(255, 153, 0);
+}
+
+#poor-points{
+  color: rgb(255, 51, 0);
+}
+
+.home-icon {
+	position: absolute;
+	border-radius: 10px;
+	margin-left: 5px;
+	margin-top: 5px;
+}
+
+.heading-row {
+	font-size: 24pt;
+	margin-right: 24pt; 
+	margin-left: 24pt;
+	margin-top: 12pt;
+	line-height: 28pt;
+	min-height: 36pt;
+	color: rgb(0, 120, 130);
+}
+
+.exercise-context > a {
+	color: black;
+}
+
+hr {
+  color: white;
+  width: 85%;
+  margin-left: auto ;
+  margin-right: auto ;
+}

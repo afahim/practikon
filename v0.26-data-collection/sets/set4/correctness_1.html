@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html onclick="" class="no-js" lang="en" > <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width" />
+	<meta name="activity-type" content="correctness">
+	<title>Practikon</title>
+
+	<link rel="stylesheet" href="../../css/foundation.css" />
+	<link rel="stylesheet" href="../../css/general_enclosed_foundicons.css" />
+	<link rel="stylesheet" href="../../css/swipe.css" />
+	<link rel="stylesheet" href="../../css/practikon.css" />
+	<link rel="stylesheet" href="../../css/correctness_elaboration.css" />
+	<link rel="stylesheet" href="../../css/navigation/navigation.css" />
+
+	<script type="text/javascript" src="//use.typekit.net/euy1vcm.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+	<script src="../../js/vendor/custom.modernizr.js"></script>
+
+	<div id="activity-set-number">set4</div>
+	<div id="content-file">correctness_1_content.html</div>
+	<div id="next-activity"><a href="./correctness_2.html">try another challenge.</a></div>
+</head>
+
+<body onkeypress="myFunction(event)">
+
+	<div class="row" id="page-header-container">
+		<div id="page-header">practikon</div>
+		<div class="set-number"></div>		
+		<div id="points-container">
+			<span id="good-points" class="point-counter">0</span> I
+			<span id="okay-points" class="point-counter">0</span> I
+			<span id="poor-points" class="point-counter">0</span>
+			<i class="foundicon-home"></i>
+		</div>
+		<div id="context-button" class="activity-nav-button" onClick="window.mySwipe2.prev();">
+			< context
+		</div>
+		<div id="guide-button" class="activity-nav-button" onClick="window.mySwipe2.next();">
+			guide >
+		</div>
+	</div>
+
+	<div id='slider2' class='swipe'>
+		<div class='swipe-wrap'>
+			<div id="context" class="swipe-compartment">
+				You are about to read a sentence that is part of a <span class="highlighted">proposal</span> encouraging professionals to use <span class="highlighted">Edocs</span>.
+			</div>
+
+			<!--div class="row"-->
+			<div class="swipe-compartment activity-area">
+				<!--CONTENT STARTS HERE><-->
+
+				<div class="heading-row">
+					<div>Focus: Correctness</div>
+				</div>
+
+				<HR size="3" width="45" color="red"/>
+
+				<div id = "editable">
+
+
+				</div>
+				<!--CONTENT ENDS HERE><-->
+
+			</div>
+			<!--/div-->
+
+			<div id="guide" class="swipe-compartment">
+				This paragraph may seem long because the sentences include <span class="highlighted">unnecessary information</span>. Fix it. Select the phrase that you think is problematic and choose the <span class="highlighted">most effective way to make the paragraph more concise.</span>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="no-slide row" id="scope-modal">
+		<i id="scope-cross" class="foundicon-remove"></i>
+		<div id="scope-modal-message"><span class="response-submitter"
+			onClick="submitResponse()">check your answer</span></div>
+			<i id="scope-left" class="no-slide foundicon-left-arrow scope-nav" onclick="swipeLeft();"></i>
+			<i id="scope-right" class="no-slide foundicon-right-arrow scope-nav" onclick="swipeRight()"></i>
+		</div>
+
+
+	<script>
+	document.write('<script src=' +
+		('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
+		'.js><\/script>')
+	</script>
+
+	<script src="../../js/myjs/class-manipulator.js"></script>
+
+	<script src="../../js/foundation.min.js"></script>
+
+	<script src="../../js/vendor/jquery.js"></script>
+
+	<script src="../../js/vendor/swipe.js"></script>
+
+	<script src="../../js/vendor/jquery-ui-1.10.3.custom.js"></script>
+
+	<script src="../../js/myjs/practikon.js"></script>
+
+<script>
+$(document).foundation();
+</script>
+</body>
+</html>

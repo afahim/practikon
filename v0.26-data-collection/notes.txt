@@ -1,0 +1,4 @@
+We are focusing on Coherence, Concision, Parallelism and Correctness
+
+I'm adding meta tages to each activity type html page so that practikon.js can figure out which activity is being carried out.
+
