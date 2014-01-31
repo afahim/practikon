@@ -8,4 +8,13 @@ navigation.css is now activity.css
 
 ToDo's
 
-Get rid of .click, and replace everything with onClicks
+Maintenance
+- Get rid of .click, and replace everything with onClicks
+
+Issue Tracker
+- Follow Stacie's new scope modal workflow pdf
+
+<>
+fix foundicon remove extra element
+Fix no slide class rule
+<>

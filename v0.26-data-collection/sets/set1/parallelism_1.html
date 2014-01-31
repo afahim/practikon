@@ -67,13 +67,25 @@
 			</div>
 		</div>
 
-		<div class="no-slide row" id="scope-modal">
-			<i id="scope-cross" class="foundicon-remove"></i>
-			<div id="scope-modal-message"><span class="response-submitter"
-				onClick="submitResponse()">check your answer</span>
+		<div class="row non-dismissing" id="scope-modal">
+			<img id="scope-cross" class="scope-nav"
+				src="../../style/img/navigation_images/close.jpg">
+			</img>
+			<div id="scope-modal-message" class="non-dismissing">
+				<span class="submit-answer non-dismissing">
+					check your answer</span>
 			</div>
-			<i id="scope-left" class="no-slide foundicon-left-arrow scope-nav" onclick="window.mySwipe.prev();"></i>
-			<i id="scope-right" class="no-slide foundicon-right-arrow scope-nav" onclick=" window.mySwipe.next();"></i>
+			<img id="scope-left" class="scope-nav non-dismissing" 
+				src="../../style/img/navigation_images/back.jpg"
+				onclick="window.mySwipe.prev(); decrementChoice();">
+			</img>
+			<img id="scope-right" class="scope-nav non-dismissing" 
+				src="../../style/img/navigation_images/forward.jpg"
+				onclick=" window.mySwipe.next(); incrementChoice();">
+			</img>
+			<div id="slider" class="swipe non-dismissing">
+				<ol class="swipe-wrap choices non-dismissing"></ol>
+			</div>
 		</div>
 	</body>
 </html>

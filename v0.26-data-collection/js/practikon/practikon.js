@@ -6,8 +6,11 @@
 /*---------------------------------------------------------------------------
     Miscellaneous operations for setting up activity
     -------------------------------------------------------------------------*/
-var selectedSegment, selectedChoice, thisClass, activityType, textDirection;
-var submitResponse;
+
+var selectedSegment, thisClass, activityType, textDirection, selectedChoice;
+var submitResponse, selectedChoiceIndex;
+
+var selectedChoiceIndex = 1;
 
 window.onload=function() {
 
@@ -18,13 +21,24 @@ window.onload=function() {
 
     //Processing all clicks according to type of element clicked
     $(document).click(function(event){
-
         thisClass = $(event.target).attr('class');
         var thisID = $(event.target).attr('id');
-        
-        console.log(thisClass);
 
-        if (thisClass == undefined) {
+        // Not dismissing scope mode if useful functionality is clicked 
+        // on by the user
+        if (thisClass != undefined 
+            && thisClass.indexOf("submit-answer") !== -1) {
+            submitResponse();
+        }
+        else if (thisClass != undefined 
+            && thisClass.indexOf("non-dismissing") !== -1) {
+            //if this class isn't a scope modal navigation button
+            if (thisClass.indexOf("scope-nav") === -1) {
+                replaceChoice(event);
+            }
+        }
+        
+        else if (thisClass == undefined) {
             dismissScopeModal(event);
         }
 
@@ -34,23 +48,14 @@ window.onload=function() {
 
         //This Code is called when "selectable" segment is clicked.
         //It clears up the currently existent content.
-        else if (thisClass.indexOf("problematic") !== -1 
-            && thisClass.indexOf("problematic-") === -1) {
-            processSelectable(event);   
+        else if (thisClass.indexOf("problematic") !== -1 ) {
+            processProblematic(event);   
         }
 
         //Replacing existing text with the choice that was clicked.
         //Making existing text one of the available choices for the segment
         else if (thisClass.indexOf("choice") !== -1) {
-            replaceChoice(event, thisClass);
-        }
-
-        // Not dismissing scope mode if useful functionality is clicked 
-        // on by the user
-        else if (thisClass.indexOf("no-slide") !== -1 
-            || thisClass.indexOf("segment-delete") !== -1
-            || thisClass.indexOf("response-submitter") !== -1 
-            || thisClass.indexOf("activity-nav-button") !== -1) {
+            replaceChoice(event);
         }
 
         //Redirecting user to home page if clicked on home button
@@ -93,6 +98,7 @@ window.onload=function() {
 
         window.mySwipe2 = new Swipe(document.getElementById('slider2'), {
             startSlide: 1,
+            continuous: false,
             transitionEnd: function(index, elem) {
                 
                 var swipeNumber = window.mySwipe2.getPos();
@@ -192,10 +198,13 @@ window.onload=function() {
     Replacing chosen answer with corrently selected answer in the activity
     -------------------------------------------------------------------------*/
 
-function replaceChoice (event, thisClass) {
-        var originalText = selectedSegment.html();
-        var selectedChoice = $(event.target).html();
-        var classToAdd = "";
+function replaceChoice (event) {
+    var originalText = selectedSegment.html();
+    var selectedChoice = $("ol.choices div:eq(" + (selectedChoiceIndex-1) + ")");
+    var selectedChoiceHTML = selectedChoice.html();
+
+    var choiceClass = selectedChoice.attr('class');
+    var classToAdd = "";
 
     if (textDirection) { //only for parallelism activity
         if (textDirection == 0) //text is displaced up
@@ -204,24 +213,24 @@ function replaceChoice (event, thisClass) {
         } 
         else { //text is displaced down
             classToAdd = "problematic-down";
-        }        
+        }
     }
 
-    if (thisClass.indexOf("good") !== -1) {
+    if (choiceClass.indexOf("good") !== -1) {
         classToAdd = replaceClassWith(
             "problematic",
             selectedSegment.get(0).className,
             classToAdd + "-good"
             );
-    } 
-    else if (thisClass.indexOf("okay") !== -1) {
+    }
+    else if (choiceClass.indexOf("okay") !== -1) {
         classToAdd = replaceClassWith(
             "problematic",
             selectedSegment.get(0).className,
             classToAdd + "-okay"
             );
     }
-    else if (thisClass.indexOf("poor") !== -1) {
+    else if (choiceClass.indexOf("poor") !== -1) {
         classToAdd = replaceClassWith(
             "problematic",
             selectedSegment.get(0).className,
@@ -233,32 +242,32 @@ function replaceChoice (event, thisClass) {
         selectedSegment.get(0).className);
 
     var choiceOptionType = getClassWith("-option", 
-        $(event.target).get(0).className);
+        selectedChoice.get(0).className);
 
-    $(event.target).fadeOut("slow", function(){
-        $(this).html(originalText).hide();
-        $(this).fadeIn("slow", function(){
+    //selectedChoice.fadeOut("slow", function() {
+    //    $(this).html(originalText).hide();
+    //    $(this).fadeIn("slow", function(){
             $("#scope-modal-message > span").css("visibility", 
-                "visible");
-        });
-        selectedSegment.html(selectedChoice).hide();
-        selectedSegment.css("opacity", "1");
-        selectedSegment.show();
+                "visible");//});
+    //    });
 
-        $(event.target).get(0).className = removeClassWith(
+    selectedSegment.html(selectedChoiceHTML).hide();
+    selectedSegment.css("opacity", "1");
+    selectedSegment.show(200);
+
+    selectedChoice.get(0).className = removeClassWith(
             "-option",
-            $(event.target).get(0).className) + actualOptionType;
+            selectedChoice.get(0).className) + actualOptionType;
 
+    selectedSegment.get(0).className = removeClassWith(
+        "-option",
+        classToAdd);
+
+    setTimeout(function(){
         selectedSegment.get(0).className = removeClassWith(
             "-option",
-            classToAdd);
-
-        setTimeout(function(){
-            selectedSegment.get(0).className = removeClassWith(
-                "-option",
-                classToAdd) + choiceOptionType + " problematic";
-        }, 0);
-    });
+            classToAdd) + choiceOptionType + " problematic";
+    }, 0);
 }
 
 /*---------------------------------------------------------------------------
@@ -266,23 +275,26 @@ function replaceChoice (event, thisClass) {
     -------------------------------------------------------------------------*/
 
 function dismissScopeModal(event) {
-    var newClassList = removeClassWith("problematic-", 
+    if (selectedSegment) {
+        var newClassList = removeClassWith("problematic-", 
         selectedSegment.get(0).className);
 
-    selectedSegment.get(0).className = newClassList;
+        selectedSegment.get(0).className = newClassList;
 
-    var optionsID = selectedSegment.next().attr('id');
-    document.getElementById(optionsID).innerHTML = "";
-    $("#" + optionsID).append("<ol class=\"option\"></ol>");
-    $(".choices").each(function(){
-        $("#" + optionsID).append($(this).html());
-    });
-    $(".scope-nav").hide();
-    $('#scope-modal').slideUp(600);
-    selectedSegment.removeClass("selected");
-    selectedSegment.removeClass("selected-non-problematic");
-    selectedSegment = null;
-    scopeDismissed = true;
+        var optionsID = selectedSegment.attr('id');
+        //document.getElementById(optionsID).innerHTML = "";
+        /*$("#" + optionsID).append("<ol class=\"option\"></ol>");
+        $(".choices").each(function(){
+            $("#" + optionsID).append($(this).html());
+        });*/
+        $('#scope-modal').slideUp(600, function() {
+            $(".scope-nav").hide();
+        });
+        selectedSegment.removeClass("selected");
+        selectedSegment.removeClass("selected-non-problematic");
+        selectedSegment = null;
+        scopeDismissed = true;
+    }
 }
 
 /*---------------------------------------------------------------------------
@@ -299,53 +311,72 @@ function animateNonProblematic(event) {
     },700);
 }
 
-function processSelectable(event) {
+function processProblematic(event) {
+
     var segmentClass = "";
-    var optionsID = $(event.target).next().attr('id');
+    var optionsID = $(event.target).attr('id');
     selectedSegment = $(event.target);
 
     if (activityType == "parallelism") {
         //textDirection randomly decides if problematic text moves 
-        //up or down - 1 is up, 0 is down
+        //up or down -> 1 is up, 0 is down
         if(textDirection == null) {
             textDirection = Math.round(Math.random());
         }
 
         if (textDirection == 0) {
             segmentClass = "problematic-up";
-        }
-        else {
+        } else {
             segmentClass = "problematic-down";
         }
 
         if (thisClass.indexOf("good") !== -1) {
             segmentClass = segmentClass + "-good"
-        } 
-        else if (thisClass.indexOf("okay") !== -1) {
+        } else if (thisClass.indexOf("okay") !== -1) {
             segmentClass = segmentClass + "-okay"
-        }
-        else if (thisClass.indexOf("poor") !== -1) {
+        } else if (thisClass.indexOf("poor") !== -1) {
             segmentClass = segmentClass + "-poor"
         }
 
         selectedSegment.addClass(segmentClass);
     }
 
-    $(".choices").remove();
     selectedSegment.addClass("selected");
 
-    $("." + segmentClass + " > .segment-delete").fadeOut(0);
-    $("." + segmentClass + " > .segment-delete").fadeIn(0, function(){
-        $('#scope-modal').slideDown(600);
-        $(".scope-nav").show();
-        $("#scope-modal").append("<div id=\"slider\" "
-            + "class=\"swipe no-slide\"></div>");
-        $("#slider").append("<ol class=\"swipe-wrap choices "
-            +"no-slide\"></ol>");
-        $("#" + optionsID + " div").each(function(){
-            $(".choices").append($(this).clone());
-        });
-        window.mySwipe = Swipe(document.getElementById('slider'));
-        scopeDismissed = false;
+    $('#scope-modal').slideDown(600);
+    $(".scope-nav").show();
+
+
+
+    $(".choice").each(function(){
+        $(".choices").append($(this).clone());
     });
+
+    window.mySwipe = Swipe(document.getElementById('slider'), {
+        continuous: true,
+        transitionEnd: onModalSwipe
+    });
+
+    scopeDismissed = false;
+}
+
+function onModalSwipe(index, elem) {
+    currentChoiceNumber = index;
+    var choiceText = $(elem);
+}
+
+function incrementChoice() {
+    if (selectedChoiceIndex == 3) {
+        selectedChoiceIndex = 0;
+    } else {
+        selectedChoiceIndex++;
+    }
+}
+
+function decrementChoice() {
+    if (selectedChoiceIndex == 0) {
+        selectedChoiceIndex = 3;
+    } else {
+        selectedChoiceIndex--;
+    }
 }
