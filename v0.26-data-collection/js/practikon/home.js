@@ -3,7 +3,18 @@
     -------------------------------------------------------------------------*/
 
 window.onload=function() {
+
+	$("#re-login").click(function() {
+		localStorage.clear();
+		userLogin();
+	});
+
 	if (isStorageAvailable()) {
+		var isLoggedIn = localStorage.getItem("login-id");
+		if (isLoggedIn === null) {
+			userLogin();
+		}
+
 		$(".set-number").each(function() {
 			var setNumber = $( this ).text();
 
@@ -38,5 +49,18 @@ function isStorageAvailable() {
   } catch (e) {
     return false;
   }
+}
+
+function userLogin() {
+	$.magnificPopup.open({
+		items: {
+			src: $("#signup-modal"),
+			type: 'inline'
+		}
+	});
+	$("#registration-modal").click(function() {
+		localStorage.setItem("login-id", $("#andrew-id").text());
+		alert($("#andrew-id").val());
+	});
 }
 

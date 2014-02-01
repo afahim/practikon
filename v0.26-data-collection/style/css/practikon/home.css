@@ -48,3 +48,23 @@ hr {
   margin-left: auto ;
   margin-right: auto ;
 }
+
+#signup-modal {
+	position: relative;
+	background: #FFF;
+	padding: 20px;
+	width: auto;
+	max-width: 500px;
+	margin: 20px auto;
+}
+
+#re-login {
+    margin-top: 1%;
+    right: 2%;
+    position: absolute;
+}
+
+#registration-modal {
+    right: 4%;
+    position: absolute;
+}

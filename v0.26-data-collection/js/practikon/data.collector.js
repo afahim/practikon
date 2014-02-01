@@ -5,6 +5,9 @@
 
 /*
 
+//Getting User's AndrewID
+
+
 Parse.initialize("kLLzT59svrSsBFRyP90AaRMgOImHPkUhPQtFoiIZ", "0kv0VbKYkuJvXL1VfB1IjZVvLnhcfNyDwypBsH8A");
 
 var TestObject = Parse.Object.extend("TestObject");
