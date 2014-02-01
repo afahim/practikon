@@ -4,6 +4,11 @@
 
 window.onload=function() {
 
+	$("#not-participate").click(function() {
+		localStorage.clear();
+		localStorage.setItem("login-id", "non-participant");
+	});
+
 	$("#re-login").click(function() {
 		localStorage.clear();
 		userLogin();
@@ -60,7 +65,7 @@ function userLogin() {
 	});
 	$("#registration-modal").click(function() {
 		localStorage.setItem("login-id", $("#andrew-id").text());
-		alert($("#andrew-id").val());
+		$.magnificPopup.close();
 	});
 }
 

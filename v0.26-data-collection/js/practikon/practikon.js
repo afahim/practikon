@@ -146,10 +146,10 @@ window.onload=function() {
             $(".problematic").addClass("submitted");
             $(".non-problematic").addClass("context-finalized");
             $("#slider").html("<div class=\"choice no-slide swipe-wrap\">"
-                + "best response:</br> " + $(".choice.good-option").text() 
+                + "best response - " + $(".choice.good-option").first().text() 
                 + "</div>");
 
-            if( $(".problematic").hasClass("poor-option")){
+            if( $(".problematic").hasClass("poor-option") ){
                 var poorPoints = parseInt(localStorage.getItem(setNumber 
                     + "-poor")) + 1;
                 $("#poor-points").text(poorPoints);
@@ -178,20 +178,20 @@ window.onload=function() {
         evt = evt || window.event;
         switch (evt.keyCode) {
         case 13: //Enter key
-        submitResponse();
-        break;
+            submitResponse();
+            break;
         case 37: //Left Key
-        if (!scopeDismissed) {
-          window.mySwipe.prev();
-      }
-      break;
+            if (!scopeDismissed) {
+              window.mySwipe.prev();
+            }
+        break;
         case 39: //Right Key
-        if (!scopeDismissed) {
-          window.mySwipe.next();
-      }
-      break;
-  }
-};
+            if (!scopeDismissed) {
+              window.mySwipe.next();
+            }
+        break;
+        }
+    };
 }
 
 /*---------------------------------------------------------------------------
@@ -244,12 +244,8 @@ function replaceChoice (event) {
     var choiceOptionType = getClassWith("-option", 
         selectedChoice.get(0).className);
 
-    //selectedChoice.fadeOut("slow", function() {
-    //    $(this).html(originalText).hide();
-    //    $(this).fadeIn("slow", function(){
-            $("#scope-modal-message > span").css("visibility", 
-                "visible");//});
-    //    });
+    $("#scope-modal-message > span").css("visibility", 
+        "visible");
 
     selectedSegment.html(selectedChoiceHTML).hide();
     selectedSegment.css("opacity", "1");

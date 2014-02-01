@@ -59,8 +59,14 @@ hr {
 }
 
 #re-login {
-    margin-top: 1%;
-    right: 2%;
+    margin-top: 2px;
+    right: 5px;
+    position: absolute;
+}
+
+#not-participate {
+	margin-top: 2px;
+    right: 70px;
     position: absolute;
 }
 
