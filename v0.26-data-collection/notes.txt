@@ -14,6 +14,9 @@ Maintenance
 Issue Tracker
 - Follow Stacie's new scope modal workflow pdf
 
+Known Bugs
+- When response is submitted, not always does it do the animation. Sometimes it just colors. Other times it actually displaces the text. I believe there is some timing error going on.
+
 <>
 fix foundicon remove extra element
 Fix no slide class rule
