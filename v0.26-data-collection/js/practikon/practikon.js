@@ -64,7 +64,7 @@ function populateScores() {
 
     goodPoints = localStorage.getItem(setNumber + "-good");
     okayPoints = localStorage.getItem(setNumber + "-okay");
-     poorPoints = localStorage.getItem(setNumber + "-poor");
+    poorPoints = localStorage.getItem(setNumber + "-poor");
 
     if (goodPoints == undefined) {goodPoints = 0; localStorage.setItem(
         setNumber + "-good", "0");};
@@ -92,18 +92,22 @@ function initActivitySwipe() {
 
             if (swipeNumber == 0) {
                 $("#guide-button").removeClass("guide-active");
-                $("#context-button").addClass("context-active");
+                //$("#context-button").addClass("context-active");
+                $("#context-button").removeClass("context-active");
                 $("#guide-button").fadeOut(150, function() {
                     $(this).text("back >").fadeIn(200);
                 });
+                $("#guide-button").addClass("back-active");
                 transitioningFrom = 0;
             }
             else if (swipeNumber == 2) {
                 $("#context-button").removeClass("context-active");
-                $("#guide-button").addClass("guide-active");
+                //$("#guide-button").addClass("guide-active");
+                $("#guide-button").removeClass("guide-active");
                 $("#context-button").fadeOut(150, function() {
                     $(this).text("< back").fadeIn(200);
                 });
+                $("#context-button").addClass("back-active");
                 transitioningFrom = 2;
             } 
             else {
@@ -117,8 +121,8 @@ function initActivitySwipe() {
                         $(this).text("guide >").fadeIn(200);
                     });
                 }
-                $("#context-button").removeClass("context-active");
-                $("#guide-button").removeClass("guide-active");
+                $("#context-button").removeClass("back-active");
+                $("#guide-button").removeClass("back-active");
             }
         }
     });
@@ -385,4 +389,16 @@ function submitResponse() {
         } 
     }
     responseSubmitted = true;
+}
+
+
+/*---------------------------------------------------------------------------
+    Reset scores. This is used by the set_index.html file.
+    -------------------------------------------------------------------------*/
+function resetScores() {
+    setNumber = $("#activity-set-number").text();
+
+    localStorage.setItem(setNumber + "-good", 0);
+    localStorage.setItem(setNumber + "-okay", 0);
+    localStorage.setItem(setNumber + "-poor", 0);
 }

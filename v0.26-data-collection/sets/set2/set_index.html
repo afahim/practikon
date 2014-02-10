@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<!--[if IE 8]> 				<html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html onclick="" class="no-js" lang="en" > <!--<![endif]-->
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width" />
@@ -12,12 +11,18 @@
 	<link rel="stylesheet" href="../../style/css/practikon/practikon.css" />
 	<link rel="stylesheet" href="../../style/css/practikon/set-index.css" />
 
+	<script src="../../js/vendor/jquery.js"></script>
+	<script src="../../js/vendor/swipe.js"></script>
+	<script src="../../js/practikon/class.manipulator.js"></script>
+	<script src="../../js/practikon/practikon.js"></script>
+
 	<script type="text/javascript" src="//use.typekit.net/euy1vcm.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+	<div id="activity-set-number">set2</div>
 </head>
 
-<body>
-
+<body onload="resetScores()">
 	<!--	Page Header	-->
 
 	<div class="row" id="page-header-container">
@@ -30,7 +35,7 @@
 	<!--	Set Title	-->
 
 	<div class="heading-row">
-		<div>Business Overseas</div>
+		<div>Conference Registration 1</div>
 	</div>
 
 	<HR size="3" width="45" color="red"/>
@@ -38,16 +43,14 @@
 	<!--	Set Information	-->
 
 	<div class="intro-text">
-		You are about to read text that is part of a
-		 <span class="highlighted">proposal</span> encouraging professionals
-		 to use <span class="highlighted">Edocs</span>. But they're not buying
-		 it because its poorly written.
+	  The following section presents excerpts from an<span class="highlighted"> Executive Summary </span> of a <span class="highlighted">Final Technical Report</span> on a new conference registration system created by a software development team in Qatar. The developers believe that the innovative features of their new system make it superior to its competitors. However, their clients (the Qatar National Convention Center) did not find the Executive Summary and Report convincing enough. In the <span class="highlighted">challenges</span> that follow, try to consider the options presented so that the developers can make the most effective case for their audience. <br><br>Directions:  Identify and improve text that can make the report more effective, in terms of its  <span class="highlighted">coherence</span>, <span class="highlighted">concision</span>, and <span class="highlighted">correctness</span>. 
+ 
 	</div>
 
 	<!--	Button for starting activities	-->
 
-	<a href="./coherence_1.html">
-		<div id="improve-button" ><span>Improve it!</span></div>
+	<a href="./concision_1.html">
+	  <div id="improve-button" ><span>Improve it!</span></div>
 	</a>
 
 </body>
