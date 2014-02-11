@@ -1,0 +1,245 @@
+/* ==========================================================================
+  General Styling for Activities in Practikon
+  ========================================================================== */
+
+/**
+ * Background and Body
+ */
+
+#next-activity {
+  display: none;
+}
+
+#content-file {
+  display: none;
+}
+
+.feedback-screen {
+  margin-top: 100px;
+  font-size: 32pt;
+}
+
+#scope-modal-message {
+  position: relative;
+  margin-left: auto;
+  margin-left: auto;
+  text-align: center;
+  margin-top: 7px;
+  border-radius: 5px;
+}
+
+#scope-modal-message > span  {
+  visibility: hidden;
+  background: white;
+  border-radius: 5px;
+  font-weight: 700;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.button-container {
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
+}
+
+#points-container {
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
+  position: relative;
+  height: 30px;
+  bottom: 50px;
+}
+
+#animated-gif {
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
+  position: relative;
+}
+
+#feedback-text {
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
+  position: relative;
+  color: rbg(128, 128, 128);
+  line-height: 28pt;
+  font-size: 24pt;
+  margin-top: 20px;
+}
+
+.point-counter {
+  top:100px;
+}
+
+
+#good-points{
+  color: rgb(51, 153, 51);
+}
+
+#okay-points{
+  color: rgb(255, 153, 0);
+}
+
+#poor-points{
+  color: rgb(255, 51, 0);
+}
+
+.activity-nav-button {
+  position: absolute;
+  top: 1.3em;
+  font-size: 18pt;
+  color: rgb(164,164,164);
+  z-index: 9;
+}
+
+.inline-guide-button {
+    
+    position: relative;    
+    font-size: inherit;
+    color: white;
+    text-decoration: underline;
+    text-align:center;
+    background: rgb(51, 153, 51);
+    margin-left: auto ;
+    margin-right: auto ;
+    width: 120px;
+    border-radius: 8px;
+    margin-top: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-weight: 600;
+ }
+
+#context-button {
+  left: 5px;
+  -webkit-transition:color 0.5s;  
+  -moz-transition:color 0.5s;  
+  -o-transition:color 0.5s;  
+  transition:color 0.5s;  
+}
+
+#guide-button {
+  right: 5px;
+  -webkit-transition:color 0.5s;  
+  -moz-transition:color 0.5s;  
+  -o-transition:color 0.5s;  
+  transition:color 0.5s;  
+}
+
+.context-active{
+  color: purple;
+  -webkit-transition:color 0.5s;  
+  -moz-transition:color 0.5s;  
+  -o-transition:color 0.5s;  
+  transition:color 0.5s;  
+}
+
+.guide-active{
+  color: darkgreen;
+  -webkit-transition:color 0.5s;  
+  -moz-transition:color 0.5s;  
+  -o-transition:color 0.5s;  
+  transition:color 0.5s;  
+}
+
+.back-active{
+  color: black;
+  -webkit-transition:color 0.5s;  
+  -moz-transition:color 0.5s;  
+  -o-transition:color 0.5s;  
+  transition:color 0.5s;  
+}
+
+.swipe-compartment {
+  padding: 0.5em;
+  background: white;
+  font-size: 14pt;
+  line-height:50px;
+//  height: 35em !important;
+//  min-height: 35em;
+  color: white;
+}
+
+#context {
+  background: rgb(100, 90, 160);
+  font-size: 18pt;
+  padding-right: 24pt; 
+  padding-left: 24pt;
+  padding-top: 12pt;
+  line-height: 28pt;
+  min-height: 2000px;
+  height: 100%;
+}
+
+#guide {
+  background: rgb(51, 130, 0);
+  font-size: 18pt;
+  padding-right: 24pt; 
+  padding-left: 24pt;
+  padding-top: 12pt;
+  line-height: 28pt;
+  min-height: 2000px;
+  height: 100%;
+}
+
+#guide p {
+    margin-bottom: 0.5em;
+}
+
+#guide h1 {
+    color:      #fff;
+    font-size:  24pt;
+    font-family: inherit;
+}
+
+#guide h2 {
+    color:      #fff;
+    font-size:  20pt;
+    font-family: inherit;
+    margin-top: 1.5em;
+    margin-bottom: 0;
+}
+
+#guide h3 {
+    color:      #fff;
+    font-size:  18pt;
+    font-family: inherit;
+    margin-top: 1.2em;
+    margin-bottom: 0;
+}
+
+#guide h4 {
+    color:      #fff;
+    font-size:  18pt;
+    font-style: normal;
+    font-weight: normal;
+    font-style: italic;
+    font-family: inherit;
+    margin-top: 1.2em;
+    margin-bottom: 0;
+}
+
+.activity-area {
+  font-size: 24pt;
+  padding-right: 24pt; 
+  padding-left: 24pt;
+  padding-top: 12pt;
+  line-height: 28pt;
+  min-height: 36pt;
+}
+
+.scope-nav {
+  border-radius:  10px;
+}
+
+.swipe-wrap {
+}
+
+#slider2 {
+}
+
