@@ -1,0 +1,83 @@
+/* ==========================================================================
+  Styling for Set Index Pages
+  ========================================================================== */
+
+body {
+	background-color: rgb(180, 0, 0);
+}
+
+#improve-button {
+  position: relative;
+  margin-left: auto;
+  margin-left: auto;
+  text-align: center;
+  margin-top: 36px;
+  border-radius: 5px;
+}
+
+#improve-button > span  {
+  background: white;
+  border-radius: 5px;
+  font-weight: 700;
+  color: black;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+#points-container {
+	position:absolute;
+	right:0px;
+	margin-right: 7.5%;
+	color: black;
+}
+
+#good-points{
+  color: rgb(51, 153, 51);
+}
+
+#okay-points{
+  color: rgb(255, 153, 0);
+}
+
+#poor-points{
+  color: rgb(255, 51, 0);
+}
+
+.home-icon {
+	position: absolute;
+	border-radius: 10px;
+	margin-left: 5px;
+	margin-top: 5px;
+}
+
+.intro-text {
+	font-size: 24pt;
+	margin-right: 24pt; 
+	margin-left: 24pt;
+	margin-top: 12pt;
+	line-height: 28pt;
+	min-height: 36pt;
+	color: white;
+}
+
+.heading-row {
+  font-size: 24pt;
+  padding-right: 24pt; 
+  padding-left: 24pt;
+  padding-top: 12pt;
+  line-height: 28pt;
+  min-height: 36pt;
+
+  color: rgb(255, 153, 0);
+}
+
+.exercise-context > a {
+	color: black;
+}
+
+HR {
+  border-color: black;
+  width: 85%;
+}
