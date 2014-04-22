@@ -8,6 +8,7 @@ window.onload=function() {
 	$("#not-participate").click(function() {
 		localStorage.clear();
 		localStorage.setItem("login-id", "non-participant");
+	        location.reload();
 	});
 
 	$("#re-login").click(function() {
@@ -68,8 +69,7 @@ function userLogin() {
 		localStorage.setItem("login-id", $("#andrew-id").val());
 		$.magnificPopup.close();
 
-	    saveEvent($("#andrew-id").val(), "LOGIN", "-", "-", "-", "-", "-");
-	    
+	    saveEvent($("#andrew-id").val(), "LOGIN", "-", "-", "-", "-", "-");	    
 	    location.reload();
 	});
 }

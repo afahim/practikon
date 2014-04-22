@@ -21,11 +21,11 @@ function initParse() {
 
 /*
   use_id:        student id
-  page_type:    home, setIndex, or activity
+  page_type:     LOGIN, home, setIndex, or activity
   set_id:        set id
-  activity_name  activity file name $("content-file").text()
-  event_type:    response, guide, context, or recognition
-  response:      $(".problematic).text() ---- actual text selected by the user.
+  activity_name  activity file name (HTML content file)
+  event_type:    recognition, response, guide, or context
+  response:      actual text selected by the user.
   choice:        good, okay, or poor
 */
 
