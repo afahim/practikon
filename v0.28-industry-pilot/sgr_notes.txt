@@ -1,0 +1,56 @@
+
+I've finished with set 1 through 4.
+
+I am currently incorporating the latest content from Mollie's Google Drive docs. I have finished incorporating all the content elements, and the guides up to metadiscourse. Formatting is questionable, but I will worry about htat later.
+
+So, I will need to start with Concision's Guide, and finish rest of the content.
+
+---
+
+2/9 notes
+
+TOOD:
+
+0. When the activity starts, the initial option is not the same as the one shown in the text. That's misleading...
+
+1. Format the guide pages better
+
+2. Reset the scores on the set_index.html page. (DONE)
+
+3. Guide pages should not be cut off. (DONE)
+
+.swipe-compartment {
+  padding: 0.5em;
+  background: white;
+  font-size: 14pt;
+  line-height:50px;
+//  height: 35em !important; // this cuts off the page.
+  min-height: 35em;
+  color: white;
+}
+
+4. changed the guide/context buttons's highlighting scheme (DONE)
+
+
+----
+B-1 the line is cut off.
+file:///Users/user/practikon/v0.26-data-collection/sets/set4/coherence_1.html
+----
+
+DATA Collection
+
+1. UserID
+2. TimeStamp
+3. EventType (Home, SetIndex, or Activity)
+----
+4. Set#
+----
+5. ActivityName (e.g., coherence etc.)
+6. ActivityEvent (Response [check answer], Guide, Context)
+----
+7. ResponseID (e.g., 1, 2, 3,...)
+8. ResponseType (good, okay or poor)
+
+
+
+

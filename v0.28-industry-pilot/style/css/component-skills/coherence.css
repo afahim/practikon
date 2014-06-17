@@ -1,0 +1,138 @@
+/* ==========================================================================
+  Animation and styling for Coherence Activities
+  ========================================================================== */
+
+/*
+ * Segments that don't have a problem darken
+ */
+.selected-non-problematic {
+  /*background-color: rgba(250, 230, 104, 0.6);*/
+  animation:animation-darken 1.4s;
+ -webkit-animation:animation-darken 1.4s; /* Safari and Chrome */
+}
+
+@keyframes animation-darken
+{
+  0%{color: rgba(0, 0, 0, 0.5);}
+  50%{color: rgba(0, 0, 0, 1);}
+  100%{color: rgba(0, 0, 0, 0.5);}
+}
+
+@-webkit-keyframes animation-darken /* Safari and Chrome */
+{
+  0%{color: rgba(0, 0, 0, 0.5);}
+  50%{color: rgba(0, 0, 0, 1);}
+  100%{color: rgba(0, 0, 0, 0.5);}
+}
+
+.problematic {
+  -webkit-transition: font-size 0.3s, ;
+  -moz-transition: font-size 0.3s, ;
+  -o-transition: font-size 0.3s, ;
+  transition: font-size 0.3s, ;
+}
+
+/*
+ * Segments that DO have a problem, and show animation based on how the answer is rated
+ */
+
+.submitted.problematic.good-option {
+  animation:animation-good 0.6s;
+  -webkit-animation:animation-good 0.6s; /* Safari and Chrome */
+  animation-fill-mode: forwards; 
+  -webkit-animation-fill-mode: forwards; 
+}
+
+.submitted.problematic.okay-option {
+  animation:animation-okay 0.6s;
+  -webkit-animation:animation-okay 0.6s; /* Safari and Chrome */
+  animation-fill-mode: forwards; 
+  -webkit-animation-fill-mode: forwards; 
+}
+
+.submitted.problematic.poor-option {
+  animation:animation-poor 0.6s;
+  -webkit-animation:animation-poor 0.6s; /* Safari and Chrome */
+  animation-fill-mode: forwards; 
+  -webkit-animation-fill-mode: forwards; 
+}
+
+@keyframes animation-good
+{
+  from{color: rgba(0, 0, 0, 0.8);} 
+  to{color: rgba(51, 204, 153, 1);}
+}
+
+@-webkit-keyframes animation-good /* Safari and Chrome */
+{
+  from{color: rgba(0, 0, 0, 0.8);}
+  to{color: rgba(51, 204, 153, 1);}
+}
+
+@keyframes animation-okay
+{
+  from{color: rgba(0, 0, 0, 0.8);}
+  to{color: rgba(255, 153, 0, 1);}
+}
+
+@-webkit-keyframes animation-okay /* Safari and Chrome */
+{
+  from{color: rgba(0, 0, 0, 0.8);}
+  to{color: rgba(255, 153, 0, 1);}
+}
+
+@keyframes animation-poor
+{
+  from{color: rgba(0, 0, 0, 0.8);}
+  to{color: rgba(255, 51, 0, 1);}
+}
+
+@-webkit-keyframes animation-poor /* Safari and Chrome */
+{
+  from{color: rgba(0, 0, 0, 0.8);}
+  to{color: rgba(255, 51, 0, 1);}
+}
+
+/*Different Styles for segments to obtain an "incoherent" effect*/
+
+.poor-context.style0.context-finalized {
+  font-size: 0.7em;
+  font-weight: 500;
+  font: monospace;
+  opacity:1;
+}
+
+.poor-context.style1.context-finalized {
+  font-size: 1em;
+  font-weight: 600;
+  font: sans-serif;
+  opacity:0.5;
+}
+
+.poor-context.style2.context-finalized {
+  font-size: 2em;
+  font-weight: 800;
+  font: serif;
+  opacity:0.3;
+}
+
+.okay-context.style0.context-finalized {
+  font-size: 0.7em;
+  font-weight: 500;
+  font: serif;
+  opacity:1;
+}
+
+.okay-context.style1.context-finalized {
+  font-size: 1em;
+  font-weight: 600;
+  font: sans-serif;
+  opacity:0.8;
+}
+
+.okay-context.style2.context-finalized {
+  font-size: 1.3em;
+  font-weight: 500;
+  font: serif;
+  opacity:0.6;
+}

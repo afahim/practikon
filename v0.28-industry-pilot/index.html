@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html onclick="" class="no-js" lang="en" > <!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width" />
+
+	<title>Practikon</title>
+
+	<link rel="stylesheet" href="style/css/vendor/foundation.css" />
+	<link rel="stylesheet" href="style/css/practikon/practikon.css" />
+	<link rel="stylesheet" href="style/css/practikon/home.css" />
+	<link rel="stylesheet" href="style/css/vendor/modal.css">
+
+	<script type="text/javascript" src="//use.typekit.net/euy1vcm.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<script src="http://www.parsecdn.com/js/parse-1.2.15.min.js"></script>
+
+	<script src="js/vendor/jquery.js"></script>
+	<script src="js/practikon/data.collector.js"></script>
+	<script src="js/practikon/home.js"></script>
+	<script src="js/vendor/modal.js"></script>
+</head>
+
+<body>
+
+  <!--	Page Header	-->
+
+  <div class="row" id="page-header-container">
+    <div id="userid">
+      <script>
+      $("#userid").text("[ " + localStorage.getItem("login-id") + " ]");
+      </script>
+    </div>
+    <a id="re-login">Login</a>
+    <a id="not-participate">No Login</a>
+<!--
+    <a id="re-login" class="button tiny">Login</a>
+    <a id="not-participate" class="button tiny">No Login</a>
+    -->
+    <img class="home-icon" src="./style/img/navigation_images/home.jpg"></img>
+    <div id="page-header">practikon</div>
+  </div>
+
+  <!--	Page Title	-->
+
+  <div class="heading-row">
+    <div>Exercise Modules</div>
+  </div>
+
+  <HR size="3" width="45" color="red"/>
+
+  <!--	List of Sets and Scores	-->
+
+  <div class="heading-row exercise-context">
+    <a href="./sets/set1/set_index.html">Cover Letter</a>
+    <div class="set-number">set1</div>
+    <span class="points-container">
+      <span id="good-points" class="point-counter"></span> I
+      <span id="okay-points" class="point-counter"></span> I
+      <span id="poor-points" class="point-counter"></span>
+    </span>
+  </div>
+
+  <div class="heading-row exercise-context">
+    <a href="./sets/set2/set_index.html">Conference Registration 1</a>
+    <div class="set-number">set2</div>		
+    <span class="points-container">
+      <span id="good-points" class="point-counter"></span> I
+      <span id="okay-points" class="point-counter"></span> I
+      <span id="poor-points" class="point-counter"></span>
+    </span>
+  </div>
+
+  <div class="heading-row exercise-context">
+    <a href="./sets/set3/set_index.html">Conference Registration 2</a>
+    <div class="set-number">set3</div>
+    <span class="points-container">
+      <span id="good-points" class="point-counter"></span> I
+      <span id="okay-points" class="point-counter"></span> I
+      <span id="poor-points" class="point-counter"></span>
+    </span>
+  </div>
+
+  <div class="heading-row exercise-context">
+    <a href="./sets/set4/set_index.html">Conference Registration 3</a>
+    <div class="set-number">set4</div>
+    <span class="points-container">
+      <span id="good-points" class="point-counter"></span> I
+      <span id="okay-points" class="point-counter"></span> I
+      <span id="poor-points" class="point-counter"></span>
+    </span>
+  </div>
+
+  <div class="heading-row exercise-context">
+    <a href="./sets/set5/set_index.html">Collaboration Overseas 1</a>
+    <div class="set-number">set5</div>
+    <span class="points-container">
+      <span id="good-points" class="point-counter"></span> I
+      <span id="okay-points" class="point-counter"></span> I
+      <span id="poor-points" class="point-counter"></span>
+    </span>
+  </div>
+
+  <div class="heading-row exercise-context">
+    <a href="./sets/set6/set_index.html">Collaboration Overseas 2</a>
+    <div class="set-number">set6</div>
+    <span class="points-container">
+      <span id="good-points" class="point-counter"></span> I
+      <span id="okay-points" class="point-counter"></span> I
+      <span id="poor-points" class="point-counter"></span>
+    </span>
+  </div>
+
+  <div class="heading-row exercise-context">
+    <a href="./sets/set7/set_index.html">Game Console Review</a>
+    <div class="set-number">set7</div>
+    <span class="points-container">
+      <span id="good-points" class="point-counter"></span> I
+      <span id="okay-points" class="point-counter"></span> I
+      <span id="poor-points" class="point-counter"></span>
+    </span>
+  </div>
+
+  
+  <div id="signup-modal" class="white-popup mfp-hide">
+    <br/>
+    <input id="andrew-id" type="text" placeholder="Your ID ... " />
+    <a id="registration-modal" class="button tiny">Go</a>
+    <br/>
+  </div>
+
+</body>
+</html>

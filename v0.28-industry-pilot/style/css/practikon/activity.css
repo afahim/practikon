@@ -1,0 +1,295 @@
+/* ==========================================================================
+  General Styling for Activities in Practikon
+  ========================================================================== */
+
+/**
+ * Background and Body
+ */
+
+body {
+
+}
+
+#next-activity {
+  display: none;
+}
+
+#content-file {
+  display: none;
+}
+
+.feedback-screen {
+  margin-top: 100px;
+  font-size: 32pt;
+}
+
+#good-feedback,
+#okay-feedback,
+#poor-feedback,
+#feedback {
+  font-style:     italic;
+  font-weight:    800;
+  font-size:      20px;
+  color:          rgb(64,64,64);
+}
+
+#good-feedback {
+    color: rgb(0, 100, 50);
+}
+#okay-feedback {
+    color: rgb(200, 100, 0);
+}
+#poor-feedback {
+    color: rgb(255, 51, 0);
+}
+
+/* Button -- Next Activity etc. */
+#scope-modal-message {
+  position: relative;
+  margin-left: auto;
+  margin-left: auto;
+  text-align: center;
+  margin-top: 14px;
+}
+
+#scope-modal-message > a.submit-answer {
+    visibility: hidden;
+}
+
+#scope-modal-message > a.submit-answer,
+#scope-modal-message > a.inline-guide-button,
+#scope-modal-message > a.inline-tryagain-button {
+    display:        inline-block;
+    width:          180px;
+    height:         30px;
+    position:       relative;
+    font-size:      18px;
+    color:          rgb(64, 64, 64);
+    text-align:     center;
+    background:     white;
+    border-radius:  8px;
+    margin-top:     2px;
+    margin-left:    8px;
+    margin-right:   8px;
+    padding-top:    5px;
+    padding-bottom: 2px;
+    padding-right:  25px;
+    padding-left:   25px;
+    font-weight:    600;
+    -webkit-tap-highlight-color: rgba(96,96,96,0.5);
+ }
+
+#scope-modal-message > a:link {
+    text-decoration: none;
+}
+
+#scope-modal-message > a:visited {
+    text-decoration: none;
+}
+
+#scope-modal-message > a:hover {
+    text-decoration: none:
+}
+
+#scope-modal-message > a:active {
+    text-decoration: underline;
+    color: #fff;
+    background-color: rgb(96,96,96);
+}
+
+.button-container {
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
+}
+
+#points-container {
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
+  position: relative;
+  height: 30px;
+  bottom: 50px;
+}
+
+#animated-gif {
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
+  position: relative;
+}
+
+#feedback-text {
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
+  position: relative;
+  color: rbg(128, 128, 128);
+  line-height: 28pt;
+  font-size: 24pt;
+  margin-top: 20px;
+}
+
+.point-counter {
+  top:100px;
+}
+
+
+#good-points{
+  color: rgb(51, 204, 153);
+}
+
+#okay-points{
+  color: rgb(255, 153, 0);
+}
+
+#poor-points{
+  color: rgb(255, 51, 0);
+}
+
+.activity-nav-button {
+  position: absolute;
+  top: 1.3em;
+  font-size: 18pt;
+  color: rgb(164,164,164);
+  z-index: 9;
+}
+
+.inline-block {
+/*  padding-top: 7px; */
+}
+
+#context-button {
+  left: 5px;
+  -webkit-transition:color 0.5s;  
+  -moz-transition:color 0.5s;  
+  -o-transition:color 0.5s;  
+  transition:color 0.5s;  
+}
+
+#guide-button {
+  right: 5px;
+  -webkit-transition:color 0.5s;  
+  -moz-transition:color 0.5s;  
+  -o-transition:color 0.5s;  
+  transition:color 0.5s;  
+}
+
+.context-active{
+  color: purple;
+  -webkit-transition:color 0.5s;  
+  -moz-transition:color 0.5s;  
+  -o-transition:color 0.5s;  
+  transition:color 0.5s;  
+}
+
+.guide-active{
+  color: darkgreen;
+  -webkit-transition:color 0.5s;  
+  -moz-transition:color 0.5s;  
+  -o-transition:color 0.5s;  
+  transition:color 0.5s;  
+}
+
+.back-active{
+  color: black;
+  -webkit-transition:color 0.5s;  
+  -moz-transition:color 0.5s;  
+  -o-transition:color 0.5s;  
+  transition:color 0.5s;  
+}
+
+.swipe-compartment {
+  padding: 0.5em;
+  background: white;
+  font-size: 14pt;
+  line-height:50px;
+/*
+  height: 35em !important;
+  min-height: 35em;
+*/
+  color: white;
+}
+
+#context {
+  background: rgb(100, 90, 160);
+  font-size: 18pt;
+  padding-right: 24pt; 
+  padding-left: 24pt;
+  padding-top: 12pt;
+  line-height: 28pt;
+  min-height: 2000px;
+  height: 100%;
+}
+
+#guide {
+  background: rgb(51, 130, 0);
+  font-size: 18pt;
+  padding-right: 24pt; 
+  padding-left: 24pt;
+  padding-top: 12pt;
+  line-height: 28pt;
+  min-height: 2000px;
+  height: 100%;
+}
+
+#guide p {
+    margin-bottom: 0.5em;
+}
+
+#guide h1 {
+    color:      #fff;
+    font-size:  24pt;
+    font-family: inherit;
+}
+
+#guide h2 {
+    color:      #fff;
+    font-size:  20pt;
+    font-family: inherit;
+    margin-top: 1.5em;
+    margin-bottom: 0;
+}
+
+#guide h3 {
+    color:      #fff;
+    font-size:  18pt;
+    font-family: inherit;
+    margin-top: 1.2em;
+    margin-bottom: 0;
+}
+
+#guide h4 {
+    color:      #fff;
+    font-size:  18pt;
+    font-style: normal;
+    font-weight: normal;
+    font-style: italic;
+    font-family: inherit;
+    margin-top: 1.2em;
+    margin-bottom: 0;
+}
+
+.activity-area {
+  font-size: 24pt;
+  padding-right: 24pt; 
+  padding-left: 24pt;
+  padding-top: 12pt;
+  line-height: 28pt;
+  min-height: 36pt;
+}
+
+.scope-nav {
+    border-radius:  10px;
+}
+
+.swipe-wrap {
+}
+
+
+#slider2 {
+}
+
+
+
+

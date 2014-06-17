@@ -1,0 +1,26 @@
+We are focusing on Coherence, Concision, Parallelism and Correctness
+
+I'm adding meta tages to each activity type html page so that practikon.js can figure out which activity is being carried out.
+
+Using images isn't good for us - we need to either use css based icons or png's to make load times faster. Can we get rid of the home page img and use an icon instead? I can find nice icons if Stacie can't.
+
+navigation.css is now activity.css
+
+ToDo's
+
+Maintenance
+- Get rid of .click, and replace everything with onClicks
+
+Issue Tracker
+- Follow Stacie's new scope modal workflow pdf
+
+Known Bugs
+- When response is submitted, not always does it do the animation. Sometimes it just colors. Other times it actually displaces the text. I believe there is some timing error going on.
+
+<>
+fix foundicon remove extra element
+Fix no slide class rule
+<>
+
+
+

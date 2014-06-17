@@ -1,0 +1,95 @@
+/* ==========================================================================
+  Animation and styling for Correctness & Elaboration Activities
+  ========================================================================== */
+
+/*
+ * Segments that don't have a problem darken
+ */
+.selected-non-problematic {
+  /*background-color: rgba(250, 230, 104, 0.6);*/
+  animation:animation-darken 1.4s;
+ -webkit-animation:animation-darken 1.4s; /* Safari and Chrome */
+}
+
+@keyframes animation-darken
+{
+  0%{color: rgba(0, 0, 0, 0.5);}
+  50%{color: rgba(0, 0, 0, 1);}
+  100%{color: rgba(0, 0, 0, 0.5);}
+}
+
+@-webkit-keyframes animation-darken /* Safari and Chrome */
+{
+  0%{color: rgba(0, 0, 0, 0.5);}
+  50%{color: rgba(0, 0, 0, 1);}
+  100%{color: rgba(0, 0, 0, 0.5);}
+}
+
+.problematic {
+  -webkit-transition: letter-spacing 0.3s;
+  -moz-transition: letter-spacing 0.3s;
+  -o-transition: letter-spacing 0.3s;
+  transition: letter-spacing 0.3s;
+}
+
+/*
+ * Segments that DO have a problem, and show animation based on how the answer is rated
+ */
+
+.submitted.problematic.good-option {
+  animation:animation-good 0.6s;
+  -webkit-animation:animation-good 0.6s; /* Safari and Chrome */
+  animation-fill-mode: forwards; 
+  -webkit-animation-fill-mode: forwards; 
+}
+
+.submitted.problematic.okay-option {
+  animation:animation-okay 0.6s;
+  -webkit-animation:animation-okay 0.6s; /* Safari and Chrome */
+  animation-fill-mode: forwards; 
+  -webkit-animation-fill-mode: forwards; 
+}
+
+.submitted.problematic.poor-option {
+  animation:animation-poor 0.6s;
+  -webkit-animation:animation-poor 0.6s; /* Safari and Chrome */
+  animation-fill-mode: forwards; 
+  -webkit-animation-fill-mode: forwards; 
+}
+
+
+@keyframes animation-good
+{
+  from{color: rgba(0, 0, 0, 0.8);}
+  to{color: rgba(51, 204, 153, 1);}
+}
+
+@-webkit-keyframes animation-good /* Safari and Chrome */
+{
+  from{color: rgba(0, 0, 0, 0.8);}
+  to{color: rgba(51, 204, 153, 1);}
+}
+
+@keyframes animation-okay
+{
+  from{color: rgba(0, 0, 0, 0.8);}
+  to{color: rgba(255, 153, 0, 1);}
+}
+
+@-webkit-keyframes animation-okay /* Safari and Chrome */
+{
+  from{color: rgba(0, 0, 0, 0.8);}
+  to{color: rgba(255, 153, 0, 1);}
+}
+
+@keyframes animation-poor
+{
+  from{color: rgba(0, 0, 0, 0.8);}
+  to{color: rgba(255, 51, 0, 1);}
+}
+
+@-webkit-keyframes animation-poor /* Safari and Chrome */
+{
+  from{color: rgba(0, 0, 0, 0.8);}
+  to{color: rgba(255, 51, 0, 1);}
+}

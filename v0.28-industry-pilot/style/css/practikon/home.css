@@ -1,0 +1,93 @@
+/* ==========================================================================
+  Styling for Practikon Home Page
+  ========================================================================== */
+
+.points-container {
+	position:absolute;
+	right:0px;
+	margin-right: 7.5%;
+	color: black;
+}
+
+#good-points{
+  color: rgb(51, 153, 51);
+}
+
+#okay-points{
+  color: rgb(255, 153, 0);
+}
+
+#poor-points{
+  color: rgb(255, 51, 0);
+}
+
+.home-icon {
+	position: absolute;
+	border-radius: 10px;
+	margin-left: 5px;
+	margin-top: 5px;
+}
+
+.heading-row {
+	font-size: 24pt;
+	margin-right: 24pt; 
+	margin-left: 24pt;
+	margin-top: 12pt;
+	line-height: 28pt;
+	min-height: 36pt;
+	color: rgb(0, 120, 130);
+}
+
+.exercise-context > a {
+	color: black;
+}
+
+hr {
+  color: white;
+  width: 85%;
+  margin-left: auto ;
+  margin-right: auto ;
+}
+
+#signup-modal {
+	position: relative;
+	background: #FFF;
+	padding: 20px;
+	width: auto;
+	max-width: 500px;
+	margin: 20px auto;
+}
+
+#re-login {
+    margin-top: 2px;
+    right: 5px;
+    position: absolute;
+    font-size: 16pt;
+    text-decoration: underline;
+    color: gray;
+}
+
+#not-participate {
+    margin-top: 2px;
+    right: 70px;
+    position: absolute;
+    font-size: 16pt;
+    text-decoration: underline;
+    color: gray;
+}
+
+#registration-modal {
+    right: 4%;
+    position: absolute;
+}
+
+#userid{
+    color: gray;
+    font-family: inherit;
+    position: absolute;
+    margin-top: 8px;
+    left: 37px;
+    font-size: 14pt;
+    font-weight: 200;
+}
+
