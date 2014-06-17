@@ -100,6 +100,7 @@ body {
 
 .selected {
   background-color: rgba(0,0,0, 0.1);
+  color: rgb(255, 51, 0);
 }
 
 
@@ -155,9 +156,13 @@ body {
 }
 
 #slider {
-  height: 100%;
+  padding-top: 20px;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
-
+#slider ol {
+    margin-bottom: 0;
+}
 
 /**
  * Making sure scope modal stays fixed regardless of horizontal overflow.
@@ -165,7 +170,6 @@ body {
 .choices {
   display: block;
   height: 100%;
-
 }
 
 .choice {
@@ -174,6 +178,11 @@ body {
     padding-right: 1.4em;
     text-align:center;
     line-height: 1.25em;
+    color: #000;
+}
+
+.original {
+    color: #f00;
 }
 
 .choice > i {

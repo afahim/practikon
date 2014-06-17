@@ -6,6 +6,10 @@
  * Background and Body
  */
 
+body {
+
+}
+
 #next-activity {
   display: none;
 }
@@ -19,24 +23,78 @@
   font-size: 32pt;
 }
 
+#good-feedback,
+#okay-feedback,
+#poor-feedback,
+#feedback {
+  font-style:     italic;
+  font-weight:    800;
+  font-size:      20px;
+  color:          rgb(64,64,64);
+}
+
+#good-feedback {
+    color: rgb(0, 100, 50);
+}
+#okay-feedback {
+    color: rgb(200, 100, 0);
+}
+#poor-feedback {
+    color: rgb(255, 51, 0);
+}
+
+/* Button -- Next Activity etc. */
 #scope-modal-message {
   position: relative;
   margin-left: auto;
   margin-left: auto;
   text-align: center;
-  margin-top: 7px;
-  border-radius: 5px;
+  margin-top: 14px;
 }
 
-#scope-modal-message > span  {
-  visibility: hidden;
-  background: white;
-  border-radius: 5px;
-  font-weight: 700;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  padding-left: 10px;
-  padding-right: 10px;
+#scope-modal-message > a.submit-answer {
+    visibility: hidden;
+}
+
+#scope-modal-message > a.submit-answer,
+#scope-modal-message > a.inline-guide-button,
+#scope-modal-message > a.inline-tryagain-button {
+    display:        inline-block;
+    width:          180px;
+    height:         30px;
+    position:       relative;
+    font-size:      18px;
+    color:          rgb(64, 64, 64);
+    text-align:     center;
+    background:     white;
+    border-radius:  8px;
+    margin-top:     2px;
+    margin-left:    8px;
+    margin-right:   8px;
+    padding-top:    5px;
+    padding-bottom: 2px;
+    padding-right:  25px;
+    padding-left:   25px;
+    font-weight:    600;
+    -webkit-tap-highlight-color: rgba(96,96,96,0.5);
+ }
+
+#scope-modal-message > a:link {
+    text-decoration: none;
+}
+
+#scope-modal-message > a:visited {
+    text-decoration: none;
+}
+
+#scope-modal-message > a:hover {
+    text-decoration: none:
+}
+
+#scope-modal-message > a:active {
+    text-decoration: underline;
+    color: #fff;
+    background-color: rgb(96,96,96);
 }
 
 .button-container {
@@ -78,7 +136,7 @@
 
 
 #good-points{
-  color: rgb(51, 153, 51);
+  color: rgb(51, 204, 153);
 }
 
 #okay-points{
@@ -97,23 +155,9 @@
   z-index: 9;
 }
 
-.inline-guide-button {
-    
-    position: relative;    
-    font-size: inherit;
-    color: white;
-    text-decoration: underline;
-    text-align:center;
-    background: rgb(51, 153, 51);
-    margin-left: auto ;
-    margin-right: auto ;
-    width: 120px;
-    border-radius: 8px;
-    margin-top: 10px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    font-weight: 600;
- }
+.inline-block {
+/*  padding-top: 7px; */
+}
 
 #context-button {
   left: 5px;
@@ -160,8 +204,10 @@
   background: white;
   font-size: 14pt;
   line-height:50px;
-//  height: 35em !important;
-//  min-height: 35em;
+/*
+  height: 35em !important;
+  min-height: 35em;
+*/
   color: white;
 }
 
@@ -234,12 +280,16 @@
 }
 
 .scope-nav {
-  border-radius:  10px;
+    border-radius:  10px;
 }
 
 .swipe-wrap {
 }
 
+
 #slider2 {
 }
+
+
+
 

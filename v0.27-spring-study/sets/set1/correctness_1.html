@@ -27,7 +27,7 @@
 
 	<div id="activity-set-number">set1</div>
 	<div id="content-file">correctness_1_content.html</div>
-	<div id="next-activity"><a href="./combo_1.html">try another challenge.</a></div>
+	<div id="next-activity"><a class="submit-answer non-dismissing" href="./combo_1.html">Next Activity</a></div>
 </head>
 
 <body>
@@ -183,23 +183,21 @@
 
 	<div class="row non-dismissing" id="scope-modal">
 	  <img id="scope-cross" class="scope-nav"
-	       src="../../style/img/navigation_images/close.jpg">
-			</img>
-			<div id="scope-modal-message" class="non-dismissing">
-			  <span class="submit-answer non-dismissing">
-			    check your answer</span>
-			</div>
-			<img id="scope-left" class="scope-nav non-dismissing" 
-			     src="../../style/img/navigation_images/back.jpg"
-			     onclick="window.mySwipe.prev();">
-			</img>
-			<img id="scope-right" class="scope-nav non-dismissing" 
-			     src="../../style/img/navigation_images/forward.jpg"
-			     onclick=" window.mySwipe.next();">
-			</img>
-			<div id="slider" class="swipe non-dismissing">
-			  <ol class="swipe-wrap choices non-dismissing"></ol>
-			</div>
+	       src="../../style/img/navigation_images/close.jpg" />
+	  <div id="slider" class="swipe non-dismissing">
+	    <ol class="swipe-wrap choices non-dismissing"></ol>
+	  </div>
+	  
+	  <div id="scope-modal-message" class="non-dismissing">
+	    <a class="submit-answer non-dismissing">Check Your Answer</a>
+	  </div>
+	  
+	  <img id="scope-left" class="scope-nav non-dismissing" 
+	       src="../../style/img/navigation_images/back.jpg"
+	       onclick="window.mySwipe.prev();"/>
+	  <img id="scope-right" class="scope-nav non-dismissing" 
+	       src="../../style/img/navigation_images/forward.jpg"
+	       onclick=" window.mySwipe.next();"/>
 	</div>
 
 </body>

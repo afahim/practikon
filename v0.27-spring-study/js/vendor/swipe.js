@@ -87,17 +87,14 @@ function Swipe(container, options) {
   }
 
   function prev() {
-
     if (options.continuous) slide(index-1);
     else if (index) slide(index-1);
 
   }
 
   function next() {
-
     if (options.continuous) slide(index+1);
     else if (index < slides.length - 1) slide(index+1);
-
   }
 
   function circle(index) {
@@ -178,8 +175,10 @@ function Swipe(container, options) {
   }
 
   function animate(from, to, speed) {
+	alert("1");      
 
     // if not an animation, just reposition
+
     if (!speed) {
 
       element.style.left = to + 'px';
@@ -209,7 +208,6 @@ function Swipe(container, options) {
       element.style.left = (( (to - from) * (Math.floor((timeElap / speed) * 100) / 100) ) + from) + 'px';
 
     }, 4);
-
   }
 
   // setup auto slideshow
@@ -217,13 +215,11 @@ function Swipe(container, options) {
   var interval;
 
   function begin() {
-
     interval = setTimeout(next, delay);
 
   }
 
   function stop() {
-
     delay = 0;
     clearTimeout(interval);
 
@@ -270,7 +266,7 @@ function Swipe(container, options) {
         time: +new Date
 
       };
-      
+
       // used for testing first move event
       isScrolling = undefined;
 
