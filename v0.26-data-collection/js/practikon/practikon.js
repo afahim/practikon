@@ -229,7 +229,6 @@ function replaceChoice () {
         }
     }
 
-
     if (choiceClass.indexOf("good") !== -1) {
         classToAdd = replaceClassWith(
 	    "problematic",
