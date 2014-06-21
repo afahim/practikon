@@ -57,20 +57,22 @@ body {
 	margin-right: 24pt; 
 	margin-left: 24pt;
 	margin-top: 12pt;
-	line-height: 28pt;
 	min-height: 36pt;
 	color: white;
 }
 
-.heading-row {
-  font-size: 24pt;
-  padding-right: 24pt; 
-  padding-left: 24pt;
-  padding-top: 12pt;
-  line-height: 28pt;
-  min-height: 36pt;
+.intro-text p {
+    line-height: 120%;
+}
 
-  color: rgb(255, 153, 0);
+.heading-row {
+    font-size: 24pt;
+    padding-right: 24pt; 
+    padding-left: 24pt;
+    padding-top: 12pt;
+    line-height: 28pt;
+    min-height: 36pt;
+    color: rgb(255, 153, 0);
 }
 
 .exercise-context > a {

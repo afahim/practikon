@@ -213,13 +213,18 @@ body {
 
 #context {
   background: rgb(100, 90, 160);
-  font-size: 18pt;
+  font-size: 24pt;
   padding-right: 24pt; 
   padding-left: 24pt;
   padding-top: 12pt;
-  line-height: 28pt;
+  line-height: 125%;
   min-height: 2000px;
   height: 100%;
+}
+
+#context p {
+  line-height: 125%;
+  margin-bottom: 0.7em;
 }
 
 #guide {
@@ -270,6 +275,16 @@ body {
     margin-bottom: 0;
 }
 
+#guide ul {
+    margin-left: 28px;
+}
+
+#guide ul li {
+    font-size: 24pt;
+    line-height: 125%;
+    margin-bottom: 18px;
+}
+
 .activity-area {
   font-size: 24pt;
   padding-right: 24pt; 
@@ -277,6 +292,7 @@ body {
   padding-top: 12pt;
   line-height: 28pt;
   min-height: 36pt;
+  color: red;
 }
 
 .scope-nav {

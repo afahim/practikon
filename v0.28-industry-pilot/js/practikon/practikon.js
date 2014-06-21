@@ -476,11 +476,8 @@ function submitResponse() {
                 $("#poor-points").text(poorPoints);
                 localStorage.setItem(setNumber + "-poor", poorPoints);
 
-		// data collection
-                saveEvent(user_id, "activity", setNumber, $("#content-file").text(), "response", $(".problematic").text(), "poor");
-
             $("#slider").html("<ol class=\"choice no-slide swipe-wrap\">"
-			      + "<div id=\"poor-feedback\">Sorry. Your selection is a poor revision. " 
+			      + "<div id=\"poor-feedback\">Sorry. Your selection is a least appropriate revision. " 
 			      + "Go to the guide page and find out more.</div>"
 			      + "</ol>"
 			     );
@@ -490,6 +487,10 @@ function submitResponse() {
 					    + "<a class=\"inline-tryagain-button\" onClick=\"window.location.reload();\">Try Again</a>"
 					 );
 	    $("#scope-modal-message > a.submit-answer").css("visibility", "visible");
+
+	    // data collection
+            saveEvent(user_id, "activity", setNumber, $("#content-file").text(), "response", $(".problematic").text(), "poor");
+
         } 
         else if( $(".problematic").hasClass("okay-option")){
 
@@ -498,13 +499,10 @@ function submitResponse() {
                 $("#okay-points").text(okayPoints);
                 localStorage.setItem(setNumber + "-okay", okayPoints);
 
-		// data collection
-                saveEvent(user_id, "activity", setNumber, $("#content-file").text(), "response", $(".problematic").text(), "okay");
-
-            $("#slider").html("<div class=\"choice no-slide swipe-wrap\">"
-			      + "<div id=\"okay-feedback\">Sorry. Your selection is a poor revision." 
+            $("#slider").html("<ol class=\"choice no-slide swipe-wrap\">"
+			      + "<div id=\"okay-feedback\">Your selection is OK, but it can be better." 
 			      + "Go to the guide page and find out more.</div>"
-			      + "</div>"
+			      + "</ol>"
 			     );
 
 	    $("#scope-modal-message").html( $("#next-activity").html() 
@@ -512,6 +510,9 @@ function submitResponse() {
 					    + "<a class=\"inline-tryagain-button\" onClick=\"window.location.reload();\">Try Again</a>"
 					 );
 	    $("#scope-modal-message > a.submit-answer").css("visibility", "visible");
+
+	    // data collection
+            saveEvent(user_id, "activity", setNumber, $("#content-file").text(), "response", $(".problematic").text(), "okay");
         }
     }
     responseSubmitted = true;

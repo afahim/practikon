@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html onclick="" class="no-js" lang="en" > <!--<![endif]-->
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="activity-type" content="coherence">
+	
+    <title>Practikon</title>
+
+    <link rel="stylesheet" href="../../style/css/vendor/foundation.css" />
+    <link rel="stylesheet" href="../../style/css/vendor/swipe.css" />
+    <link rel="stylesheet" href="../../style/css/practikon/practikon.css" />
+    <link rel="stylesheet" href="../../style/css/component-skills/coherence.css" />
+    <link rel="stylesheet" href="../../style/css/practikon/activity.css" />
+    
+    <script src="../../js/vendor/jquery.js"></script>
+    <script src="../../js/vendor/swipe.js"></script>
+    <script src="../../js/practikon/class.manipulator.js"></script>
+    <script src="http://www.parsecdn.com/js/parse-1.2.15.min.js"></script>
+    <script src="../../js/practikon/data.collector.js"></script>
+    <script src="../../js/practikon/practikon.js"></script>
+
+    <script type="text/javascript" src="//use.typekit.net/euy1vcm.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+    <div id="activity-set-number">set1</div>
+    <div id="content-file">A6.02_content.html</div>
+    <div id="next-activity"><a class="submit-answer non-dismissing" href="./A6.03.html">Next Activity</a></div>
+  </head>
+  <body>
+    <div class="row" id="page-header-container">
+      <div id="page-header">practikon</div>
+      <div class="set-number"></div>
+      <div id="points-container">
+	<span id="good-points" class="point-counter">0</span> I
+	<span id="okay-points" class="point-counter">0</span> I
+	<span id="poor-points" class="point-counter">0</span>
+	<img class="home-icon" src="../../style/img/navigation_images/home.jpg"></img>
+      </div>
+      <div id="context-button" class="activity-nav-button" onClick="window.mySwipe2.prev();">
+	&#60; context
+      </div>
+      <div id="guide-button" class="activity-nav-button" onClick="window.mySwipe2.next();">
+	guide &#62;
+      </div>
+    </div>
+
+    <div id='slider2' class='swipe'>
+      <div class='swipe-wrap'>
+	<div id="context" class="swipe-compartment">
+	  <!-- ENTER CONTEXT TEXT HERE -->
+	  <p>In the following three activities, you will find various
+	  excerpts written by experts in a specific or technical
+	  area. Although they believe their writing was fine, their
+	  supervisors have advised them to make their message
+	  understood by non-technical audiences too.</p>
+
+	  <p>These non-tech audiences are well-educated, but <span
+	  class="highlighted">their understanding of the technical
+	  terms is limited.</span></p>
+
+	  <p>Try to select the most appropriate options so that the
+	  experts can communicate to the non-technical audience most
+	  effectively.</p>
+
+	</div>
+	<!--div class="row"-->
+
+	<div class="swipe-compartment activity-area">
+	  <!--CONTENT STARTS HERE -->
+	  <div id = "editable">
+
+	  </div>
+	      <!--CONTENT ENDS HERE><-->
+	</div>
+
+	<!--/div-->
+
+	<div id="guide" class="swipe-compartment">
+	  <!-- ENTER GUIDE HERE -->
+	      <h1>Guide</h1>
+	      <ul>
+		<li>Be polite, and do not intensify your audience’s
+		problematic actions (avoid phrases like “you should
+		have etc.” or “nothing” or “already over” etc.) or the
+		details of the problem that may be attributed to the
+		audience.</li>
+	      </ul>
+	</div>
+      </div>
+    </div>
+
+    <!-- SWIPE AREA -->
+    <div class="row non-dismissing" id="scope-modal">
+      <img id="scope-cross" class="scope-nav"
+	   src="../../style/img/navigation_images/close.jpg" />
+      <div id="slider" class="swipe non-dismissing">
+	<ol class="swipe-wrap choices non-dismissing"></ol>
+      </div>	  
+      <div id="scope-modal-message" class="non-dismissing">
+	<a class="submit-answer non-dismissing">Check Your Answer</a>
+      </div>	  
+      <img id="scope-left" class="scope-nav non-dismissing" 
+	   src="../../style/img/navigation_images/back.jpg"
+	   onclick="window.mySwipe.prev();"/>
+      <img id="scope-right" class="scope-nav non-dismissing" 
+	   src="../../style/img/navigation_images/forward.jpg"
+	   onclick=" window.mySwipe.next();"/>
+    </div>
+    <!-- SWIPE AREA -->
+  </body>
+</html>
