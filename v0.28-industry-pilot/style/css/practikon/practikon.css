@@ -228,12 +228,27 @@ ol {
 
 .heading-row {
   color: rgb(255, 153, 0);
+  background: #efefef;
   font-size: 20pt;
-  padding-bottom: 14pt;
+  padding: 10pt;
+  padding-bottom: 14pt;  
   margin-bottom:  14pt;
   border-bottom:  1pt solid gray;
   line-height:    26pt
 }
+
+.heading-row #prompt {
+  margin-bottom: 15px;
+}
+
+.heading-row #problem-text {
+  color: rgb(128,128,128);
+  padding-left:  50px;
+  padding-right: 50px;
+  font-size: 16pt;
+  line-height: 120%;
+}
+
 
 HR {
   border-color: gray;

@@ -27,7 +27,8 @@
 	margin-left: 5px;
 	margin-top: 5px;
 }
-
+.citation,
+.set-title,
 .heading-row {
 	font-size: 24pt;
 	margin-right: 24pt; 
@@ -36,6 +37,28 @@
 	line-height: 28pt;
 	min-height: 36pt;
 	color: rgb(0, 120, 130);
+	background: white;
+	border-bottom:  1pt solid gray;
+}
+
+.citation {
+    margin-top: 100px;
+    background: #eeeeee;
+    border-bottom:  0pt solid gray;
+    padding: 14px;
+}
+
+.citation h2 {
+    font-size: 16pt;
+    line-height: 100%;
+    color: gray;
+}
+
+.citation p {
+    font-size: 16pt;
+    line-height: 130%;
+    margin-bottom: 0px;
+    color: gray;
 }
 
 .exercise-context > a {
