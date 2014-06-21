@@ -1,11 +1,3 @@
-<div class="heading-row">
-  <div>
-    All plumbing comes down to pipes and the fixtures that let water
-  in from those pipes and take water back out. Tackle clogs, flow
-  problems, leaks, and other woes that afflict your plumbing system.
-  </div>
-</div>
-
 <div class="segment non-problematic">
   I plan to receive 
 </div>
@@ -31,6 +23,11 @@
   <div id="3" class="choice non-dismissing okay-option">
     Carnegie Mellon. It is the leading university in Computer Science and contributed 
   </div>
+
+  <div id="4" class="choice non-dismissing poor-option">
+    Carnegie Mellon. The university that is leading in Computer Science, which contributed
+  </div>
+
 </ol>
 
 <div class="segment non-problematic">
